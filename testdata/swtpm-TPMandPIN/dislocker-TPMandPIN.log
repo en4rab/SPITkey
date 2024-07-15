@@ -1,0 +1,1321 @@
+Wed Feb  8 12:40:36 2023 [DEBUG] Verbosity level to DEBUG (4) into 'stdout'
+Wed Feb  8 12:40:36 2023 [INFO] dislocker by Romain Coltel, v0.7.2 (compiled for Linux/x86_64)
+Wed Feb  8 12:40:36 2023 [DEBUG] --- Config...
+Wed Feb  8 12:40:36 2023 [DEBUG]    Verbosity: 4
+Wed Feb  8 12:40:36 2023 [DEBUG]    Trying to decrypt '/dev/nbd0p3'
+Wed Feb  8 12:40:36 2023 [DEBUG]    	using a clear key on the volume
+Wed Feb  8 12:40:36 2023 [DEBUG]    Using the first valid metadata block
+Wed Feb  8 12:40:36 2023 [DEBUG] ... End config ---
+Wed Feb  8 12:40:36 2023 [DEBUG] Trying to open '/dev/nbd0p3'...
+Wed Feb  8 12:40:36 2023 [DEBUG] Trying to open '/dev/nbd0p3'...
+Wed Feb  8 12:40:36 2023 [DEBUG] Opened (fd #3).
+Wed Feb  8 12:40:36 2023 [DEBUG] Opened (fd #3).
+Wed Feb  8 12:40:36 2023 [DEBUG] New memory allocation at 0x5643a8fe32d0 (0x18 bytes allocated)
+Wed Feb  8 12:40:36 2023 [DEBUG] New memory allocation at 0x5643a8fe32f0 (0x90 bytes allocated)
+Wed Feb  8 12:40:36 2023 [DEBUG] New memory allocation at 0x5643a8fe3390 (0x200 bytes allocated)
+Wed Feb  8 12:40:36 2023 [DEBUG] Positioning #3 at offset 0 from 0
+Wed Feb  8 12:40:36 2023 [DEBUG] Reading volume header...
+Wed Feb  8 12:40:36 2023 [DEBUG] Reading 0x200 bytes from #3 into 0x5643a8fe3390
+Wed Feb  8 12:40:36 2023 [DEBUG] Volume header read
+Wed Feb  8 12:40:36 2023 [DEBUG] =====[ Volume header information ]=====
+Wed Feb  8 12:40:36 2023 [DEBUG]   Signature: '-FVE-FS-'
+Wed Feb  8 12:40:36 2023 [DEBUG]   Sector size: 0x0200 (512) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG]   Sector per cluster: 0x08 (8) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG]   Reserved clusters: 0x0000 (0) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG]   Fat count: 0x00 (0) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG]   Root entries: 0x0000 (0) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG]   Number of sectors (16 bits): 0x0000 (0) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG]   Media descriptor: 0xf8 (248) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG]   Sectors per fat: 0x0000 (0) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG]   Hidden sectors: 0x0003a800 (239616) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG]   Number of sectors (32 bits): 0x00000000 (0) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG]   Number of sectors (64 bits): 0x0000000000000000 (0) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG]   MFT start cluster: 0x0000000000060001 (393217) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG]   Metadata Lcn: 0x0000000000000000 (0) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG]   Volume GUID: '4967D63B-2E29-4AD8-8399-F6A339E3D001'
+Wed Feb  8 12:40:36 2023 [DEBUG]   First metadata header offset:  0x0000000009c88000
+Wed Feb  8 12:40:36 2023 [DEBUG]   Second metadata header offset: 0x00000000646a4000
+Wed Feb  8 12:40:36 2023 [DEBUG]   Third metadata header offset:  0x000000008251f000
+Wed Feb  8 12:40:36 2023 [DEBUG]   Boot Partition Identifier: '0xaa55'
+Wed Feb  8 12:40:36 2023 [DEBUG] ========================================
+Wed Feb  8 12:40:36 2023 [INFO] Volume GUID (INFORMATION OFFSET) supported
+Wed Feb  8 12:40:36 2023 [DEBUG] Entering get_metadata_lazy_checked
+Wed Feb  8 12:40:36 2023 [DEBUG] Positioning #3 at offset 164134912 from 0
+Wed Feb  8 12:40:36 2023 [DEBUG] Reading bitlocker header at 0x9c88000...
+Wed Feb  8 12:40:36 2023 [DEBUG] Reading 0x70 bytes from #3 into 0x7ffe7dcb6640
+Wed Feb  8 12:40:36 2023 [DEBUG] New memory allocation at 0x5643a8fe35a0 (0x3cf0 bytes allocated)
+Wed Feb  8 12:40:36 2023 [DEBUG] Reading data...
+Wed Feb  8 12:40:36 2023 [DEBUG] Reading 0x3c80 bytes from #3 into 0x5643a8fe3610
+Wed Feb  8 12:40:36 2023 [DEBUG] End get_metadata.
+Wed Feb  8 12:40:36 2023 [DEBUG] Reading validations data at offset 0x9c8bcf0.
+Wed Feb  8 12:40:36 2023 [DEBUG] Positioning #3 at offset 164150512 from 0
+Wed Feb  8 12:40:36 2023 [DEBUG] Reading 0x8 bytes from #3 into 0x7ffe7dcb6708
+Wed Feb  8 12:40:36 2023 [DEBUG] Looking if 0xc73acbda == 0xc73acbda for metadata validation
+Wed Feb  8 12:40:36 2023 [DEBUG] We have a winner (n°1)!
+Wed Feb  8 12:40:36 2023 [INFO] BitLocker metadata found and parsed.
+Wed Feb  8 12:40:36 2023 [DEBUG] =====================[ BitLocker information structure ]=====================
+Wed Feb  8 12:40:36 2023 [DEBUG]   Signature: '-FVE-FS-'
+Wed Feb  8 12:40:36 2023 [DEBUG]   Total Size: 0x3cf0 (15600) bytes (including signature and data)
+Wed Feb  8 12:40:36 2023 [DEBUG]   Version: 2
+Wed Feb  8 12:40:36 2023 [DEBUG]   Current state: ENCRYPTED (4)
+Wed Feb  8 12:40:36 2023 [DEBUG]   Next state: ENCRYPTED (4)
+Wed Feb  8 12:40:36 2023 [DEBUG]   Encrypted volume size: 42260778496 bytes (0x9d6f04e00), ~40303 MB
+Wed Feb  8 12:40:36 2023 [DEBUG]   Size of conversion region: 0 (0)
+Wed Feb  8 12:40:36 2023 [DEBUG]   Number of boot sectors backuped: 16 sectors (0x10)
+Wed Feb  8 12:40:36 2023 [DEBUG]   First metadata header offset:  0x9c88000
+Wed Feb  8 12:40:36 2023 [DEBUG]   Second metadata header offset: 0x646a4000
+Wed Feb  8 12:40:36 2023 [DEBUG]   Third metadata header offset:  0x8251f000
+Wed Feb  8 12:40:36 2023 [DEBUG]   Boot sectors backup address:   0x4b48000
+Wed Feb  8 12:40:36 2023 [DEBUG] New memory allocation at 0x5643a8fe72a0 (0xc bytes allocated)
+Wed Feb  8 12:40:36 2023 [DEBUG]   ----------------------------{ Dataset header }----------------------------
+Wed Feb  8 12:40:36 2023 [DEBUG]     Dataset size: 0x00003ca2 (15522) bytes (including data)
+Wed Feb  8 12:40:36 2023 [DEBUG]     Unknown data: 0x00000001 (always 0x00000001)
+Wed Feb  8 12:40:36 2023 [DEBUG]     Dataset header size: 0x00000030 (always 0x00000030)
+Wed Feb  8 12:40:36 2023 [DEBUG]     Dataset copy size: 0x00003ca2 (15522) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG]     Dataset GUID: 'B7B22752-56F1-4767-93D4-DE62F610AFFF'
+Wed Feb  8 12:40:36 2023 [DEBUG]     Next counter: 14
+Wed Feb  8 12:40:36 2023 [DEBUG]     Encryption Type: AES-XTS-128 (0x8004)
+Wed Feb  8 12:40:36 2023 [DEBUG]     Epoch Timestamp: 1675855622 sec, that to say Wed Feb  8 11:27:02 2023
+Wed Feb  8 12:40:36 2023 [DEBUG]   --------------------------------------------------------------------------
+Wed Feb  8 12:40:36 2023 [DEBUG] Freeing pointer at address 0x5643a8fe72a0
+Wed Feb  8 12:40:36 2023 [DEBUG] =============================================================================
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x50, 0xb, 0x5, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] 
+Wed Feb  8 12:40:36 2023 [DEBUG] =======[ Datum n°1 information ]=======
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x0050 (80) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 11
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE FVEK (TryObtainKey)
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 5
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Nonce: 
+Wed Feb  8 12:40:36 2023 [DEBUG] f0 9d f8 43 b0 3b d9 01 02 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] MAC: 
+Wed Feb  8 12:40:36 2023 [DEBUG] f3 96 e1 e2 7a 84 4f 1d 16 e3 e0 af 3f 89 ca 68 
+Wed Feb  8 12:40:36 2023 [DEBUG] Payload:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 93 e8 3e 34 db 7f 31 ef-9e 2c ea 65 be eb 32 9c 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000010 db a8 07 a0 0f 54 2a eb-5e 18 93 26 b7 c2 03 aa 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000020 57 32 6b c0 83 22 53 39-e5 28 4b fc 
+Wed Feb  8 12:40:36 2023 [DEBUG] =========================================
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x44, 0x7, 0x2, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] 
+Wed Feb  8 12:40:36 2023 [DEBUG] =======[ Datum n°2 information ]=======
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x0044 (68) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 7
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 2
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> UNICODE -- Total size header: 8 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] New memory allocation at 0x5643a8fe72f0 (0x78 bytes allocated)
+Wed Feb  8 12:40:36 2023 [DEBUG] UTF-16 string: 'DESKTOP-GUUFK3H C: 08/02/2023'
+Wed Feb  8 12:40:36 2023 [DEBUG] Freeing pointer at address 0x5643a8fe72f0
+Wed Feb  8 12:40:36 2023 [DEBUG] =========================================
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x13c, 0x2, 0x8, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] 
+Wed Feb  8 12:40:36 2023 [DEBUG] =======[ Datum n°3 information ]=======
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x013c (316) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 2
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE VMK
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 8
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> VMK -- Total size header: 36 -- Nested datum: yes
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Recovery Key GUID: '39C2AA90-0CFA-4B77-9622-11A99EDCE513'
+Wed Feb  8 12:40:36 2023 [DEBUG] Nonce: 
+Wed Feb  8 12:40:36 2023 [DEBUG] a0 0a de 46 b0 3b d9 01 00 00 00 08 
+Wed Feb  8 12:40:36 2023 [DEBUG]    ------ Nested datum(s) ------
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x00ac (172) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 0
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 3
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> STRETCH KEY -- Total size header: 28 -- Nested datum: yes
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Unknown: 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] Algo: 0x1000
+Wed Feb  8 12:40:36 2023 [DEBUG] Salt: 
+Wed Feb  8 12:40:36 2023 [DEBUG] 52 06 6a 79 85 9b 9c 58 c5 a3 16 3a dc db 26 a4 
+Wed Feb  8 12:40:36 2023 [DEBUG]    ------ Nested datum ------
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x0040 (64) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 18
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 5
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Nonce: 
+Wed Feb  8 12:40:36 2023 [DEBUG] f0 9d f8 43 b0 3b d9 01 03 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] MAC: 
+Wed Feb  8 12:40:36 2023 [DEBUG] af 28 9f a3 64 9c 9a dd 7c b0 ec 71 18 4c 84 eb 
+Wed Feb  8 12:40:36 2023 [DEBUG] Payload:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 8f 81 49 26 17 26 8a fb-0a 36 df ad f4 72 15 7a 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000010 3e 6b 87 b9 ee 01 45 07-85 65 52 93 
+Wed Feb  8 12:40:36 2023 [DEBUG]    ---------------------------
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0xac, 0, 0x3, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x0050 (80) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 0
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 5
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Nonce: 
+Wed Feb  8 12:40:36 2023 [DEBUG] f0 9d f8 43 b0 3b d9 01 05 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] MAC: 
+Wed Feb  8 12:40:36 2023 [DEBUG] c0 f2 f7 96 c6 f8 ae 83 f4 85 fe 6a 3a 72 f0 08 
+Wed Feb  8 12:40:36 2023 [DEBUG] Payload:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 63 e4 62 6a 4e 1b 71 75-e3 42 d6 66 0b 7f fd 9d 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000010 be 9a ec a4 2b ba 92 d3-2a c9 5e 0d 0e ec 6c ba 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000020 db 8c d1 89 c5 e7 5b 29-b8 66 71 42 
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x50, 0, 0x5, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x001c (28) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 0
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 21
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> DECRYPTED -- Total size header: 28265 -- Nested datum: yes
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Generic datum:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 80 a2 db 4e b0 3b d9 01-80 a2 db 4e b0 3b d9 01 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000010 08 00 02 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x1c, 0, 0x15, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG]    ------------------------------
+Wed Feb  8 12:40:36 2023 [DEBUG] =========================================
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x50, 0x3, 0x5, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] 
+Wed Feb  8 12:40:36 2023 [DEBUG] =======[ Datum n°4 information ]=======
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x0050 (80) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 3
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE FVEK (FveDatasetVmkGetFvek)
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 5
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Nonce: 
+Wed Feb  8 12:40:36 2023 [DEBUG] f0 9d f8 43 b0 3b d9 01 07 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] MAC: 
+Wed Feb  8 12:40:36 2023 [DEBUG] 54 6e 7b f2 72 f2 cb 4a 8f 38 c3 4b 39 78 09 97 
+Wed Feb  8 12:40:36 2023 [DEBUG] Payload:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 35 6c 1a 0b ba cb 5d 0c-ee 23 e2 33 e8 a7 2e 30 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000010 9f 0a b0 e6 7f d6 cf 83-66 92 57 13 fc 6f a2 a7 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000020 6f cb 99 14 99 32 ed fb-9e b8 1a 7b 
+Wed Feb  8 12:40:36 2023 [DEBUG] =========================================
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x28e, 0x2, 0x8, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] 
+Wed Feb  8 12:40:36 2023 [DEBUG] =======[ Datum n°5 information ]=======
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x028e (654) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 2
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE VMK
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 8
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> VMK -- Total size header: 36 -- Nested datum: yes
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Recovery Key GUID: '735E882A-43CD-4393-87EF-0038BFCA7172'
+Wed Feb  8 12:40:36 2023 [DEBUG] Nonce: 
+Wed Feb  8 12:40:36 2023 [DEBUG] 40 73 31 19 b9 3b d9 01 00 00 00 05 
+Wed Feb  8 12:40:36 2023 [DEBUG]    ------ Nested datum(s) ------
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x001c (28) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 0
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 2
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> UNICODE -- Total size header: 8 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] New memory allocation at 0x5643a8fe72c0 (0x28 bytes allocated)
+Wed Feb  8 12:40:36 2023 [DEBUG] UTF-16 string: 'TPMAndPin'
+Wed Feb  8 12:40:36 2023 [DEBUG] Freeing pointer at address 0x5643a8fe72c0
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x1c, 0, 0x2, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x006c (108) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 0
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 3
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> STRETCH KEY -- Total size header: 28 -- Nested datum: yes
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Unknown: 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 10 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] Algo: 0x2004
+Wed Feb  8 12:40:36 2023 [DEBUG] Salt: 
+Wed Feb  8 12:40:36 2023 [DEBUG] f9 33 9f ae b3 cc b8 a2 11 55 38 9b f0 bd 75 81 
+Wed Feb  8 12:40:36 2023 [DEBUG]    ------ Nested datum ------
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x0050 (80) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 0
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 5
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Nonce: 
+Wed Feb  8 12:40:36 2023 [DEBUG] 90 d1 b0 18 b9 3b d9 01 09 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] MAC: 
+Wed Feb  8 12:40:36 2023 [DEBUG] 73 73 a0 89 18 de 5e bd 9e 1e e7 4d d0 de 1d 48 
+Wed Feb  8 12:40:36 2023 [DEBUG] Payload:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 34 af 2b 66 89 47 1a 39-a9 81 d2 c5 75 0f 9b 68 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000010 a5 81 4f 47 67 ac 97 5f-90 60 4a 7e 1d 9d 3d ff 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000020 75 44 37 8d 7a 74 2c c0-e1 66 9d 78 
+Wed Feb  8 12:40:36 2023 [DEBUG]    ---------------------------
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x6c, 0, 0x3, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x000c (12) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 0
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 16
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> SIMPLE 1 -- Total size header: 12 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Generic datum:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0xc, 0, 0x10, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x001c (28) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 0
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 18
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> CONCAT HASH KEY -- Total size header: 28 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Generic datum:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 42 69 74 4c 6f 63 6b 65-72 41 75 74 68 44 61 74 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000010 61 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x1c, 0, 0x12, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x0152 (338) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 0
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 6
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> TPM_ENCODED -- Total size header: 12 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Unknown: 0x815
+Wed Feb  8 12:40:36 2023 [DEBUG] Payload:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 00 ce 00 20 b9 ba 9e 4e-0b e6 b9 79 4b 09 93 94 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000010 06 db 73 7e 6e e3 14 21-e4 8c 07 d9 cf db 87 17 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000020 f1 f0 93 10 00 10 4b f7-ae 0e a3 55 c9 ef 2a 0b 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000030 30 a7 d4 4f b7 26 1b 27-02 6f 80 48 43 55 b3 bc 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000040 b3 0e 16 07 10 e5 28 f0-7b dc 7d 83 27 63 f8 63 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000050 2b 31 1a bb 59 cd 83 8b-30 67 33 67 34 d7 1e a8 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000060 5d 73 ad dc 5c c4 0e 2b-d2 20 37 96 c4 96 24 f6 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000070 68 c2 e5 4e df 46 14 ab-fb 14 73 87 22 b1 0d e9 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000080 8e aa 15 82 93 cf 39 56-e4 4c 4a 41 76 48 b9 e4 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000090 15 fe ae 5e 93 95 1a 14-18 28 50 4e 6f 05 54 f9 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000a0 44 02 f8 ff a9 75 8e e5-b3 72 73 f5 f4 de a5 b6 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000b0 fd f1 79 ac 8d 0c 08 65-d6 ca 23 0f e7 27 ce 20 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000c0 82 f3 dd 3c ab bd 86 97-2f bf 05 bd 34 7e aa 67 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000d0 00 4e 00 08 00 0b 00 00-00 12 00 20 7b 8b e1 1d 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000e0 1d 6a 3e 46 bc 3d 35 d7-57 66 57 12 c4 04 64 2e 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000f0 65 73 e7 ed 1b 82 bd cf-a0 f6 cf 71 00 10 00 20 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000100 83 f4 e2 39 33 9e 78 72-a7 ad c9 cc 1f 74 0b 3f 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000110 ad 6b d2 13 aa dd e4 98-e9 48 cf f2 46 cd 7d db 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000120 00 20 1d d7 e1 96 ce 6e-18 af 93 07 5b 00 e7 33 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000130 ed 0c 02 21 0b b0 04 3c-f0 2a 37 d7 8e 73 7e a3 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000140 e9 18 03 15 08 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x152, 0, 0x6, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x000c (12) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 0
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 17
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> SIMPLE 2 -- Total size header: 12 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Generic datum:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0xc, 0, 0x11, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x000c (12) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 0
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 19
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> SIMPLE 3 -- Total size header: 12 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Generic datum:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0xc, 0, 0x13, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x0050 (80) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 0
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 5
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Nonce: 
+Wed Feb  8 12:40:36 2023 [DEBUG] 90 d1 b0 18 b9 3b d9 01 0b 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] MAC: 
+Wed Feb  8 12:40:36 2023 [DEBUG] 4d 07 6e c5 22 37 72 22 7c ad 6b ba 60 fe d4 ba 
+Wed Feb  8 12:40:36 2023 [DEBUG] Payload:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 10 46 02 10 bc 7a cf 75-4e 1f d0 0c 2c 2f 63 e2 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000010 d0 b5 a1 08 d2 a2 d5 9e-e1 c8 08 58 73 10 a4 fe 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000020 b5 e3 7f 4e 32 42 5a 27-45 ec c5 eb 
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x50, 0, 0x5, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Wed Feb  8 12:40:36 2023 [DEBUG]    ------------------------------
+Wed Feb  8 12:40:36 2023 [DEBUG] =========================================
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x1d90, 0x4, 0x7, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] 
+Wed Feb  8 12:40:36 2023 [DEBUG] =======[ Datum n°6 information ]=======
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x1d90 (7568) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 4
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 7
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> VALIDATION -- Total size header: 8 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Generic datum:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 02 00 01 00 06 00 00 36-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000010 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000020 00 00 00 00 00 00 00 00-02 00 01 00 05 00 00 35 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000030 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000040 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000050 02 00 01 00 01 00 00 35-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000060 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000070 00 00 00 00 00 00 00 00-02 00 01 00 09 00 00 36 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000080 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000090 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000a0 02 00 01 00 0a 00 00 36-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000c0 00 00 00 00 00 00 00 00-02 00 01 00 03 00 00 31 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000f0 02 00 01 00 04 00 00 32-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000100 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000110 00 00 00 00 00 00 00 00-02 00 01 00 07 00 00 35 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000120 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000130 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000140 02 00 01 00 02 00 00 35-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000150 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000160 00 00 00 00 00 00 00 00-02 00 01 00 0b 00 00 36 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000170 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000180 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000190 02 00 01 00 08 00 00 35-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000001a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000001b0 00 00 00 00 00 00 00 00-02 00 01 00 73 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000001c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000001d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000001e0 02 00 01 00 0b 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000001f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000200 00 00 00 00 00 00 00 00-02 00 01 00 77 00 00 17 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000210 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000220 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000230 02 00 01 00 09 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000240 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000250 00 00 00 00 00 00 00 00-02 00 01 00 0e 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000260 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000270 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000280 02 00 01 00 0a 00 00 17-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000290 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000002a0 00 00 00 00 00 00 00 00-02 00 01 00 74 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000002b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000002c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000002d0 02 00 01 00 58 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000002e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000002f0 00 00 00 00 00 00 00 00-02 00 01 00 59 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000300 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000310 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000320 02 00 01 00 6c 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000330 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000340 00 00 00 00 00 00 00 00-02 00 01 00 65 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000350 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000360 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000370 02 00 01 00 66 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000380 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000390 00 00 00 00 00 00 00 00-02 00 01 00 6e 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000003a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000003b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000003c0 02 00 01 00 6a 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000003d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000003e0 00 00 00 00 00 00 00 00-02 00 01 00 6d 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000003f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000400 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000410 02 00 01 00 67 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000420 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000430 00 00 00 00 00 00 00 00-02 00 01 00 55 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000440 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000450 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000460 02 00 01 00 78 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000470 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000480 00 00 00 00 00 00 00 00-02 00 01 00 69 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000490 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000004a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000004b0 02 00 01 00 6b 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000004c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000004d0 00 00 00 00 00 00 00 00-02 00 01 00 6f 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000004e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000004f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000500 02 00 01 00 56 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000510 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000520 00 00 00 00 00 00 00 00-02 00 01 00 57 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000530 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000540 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000550 02 00 01 00 68 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000560 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000570 00 00 00 00 00 00 00 00-02 00 01 00 47 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000580 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000590 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000005a0 02 00 01 00 50 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000005b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000005c0 00 00 00 00 00 00 00 00-02 00 01 00 15 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000005d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000005e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000005f0 02 00 01 00 14 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000600 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000610 00 00 00 00 00 00 00 00-02 00 01 00 19 00 00 12 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000620 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000630 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000640 02 00 01 00 17 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000650 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000660 00 00 00 00 00 00 00 00-02 00 01 00 1c 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000670 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000680 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000690 02 00 01 00 1a 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000006a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000006b0 00 00 00 00 00 00 00 00-02 00 01 00 1d 00 00 12 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000006c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000006d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000006e0 02 00 01 00 1b 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000006f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000700 00 00 00 00 00 00 00 00-02 00 01 00 1e 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000710 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000720 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000730 02 00 01 00 12 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000740 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000750 00 00 00 00 00 00 00 00-02 00 01 00 13 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000760 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000770 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000780 02 00 01 00 18 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000790 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000007a0 00 00 00 00 00 00 00 00-02 00 01 00 11 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000007b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000007c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000007d0 02 00 01 00 16 00 00 12-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000007e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000007f0 00 00 00 00 00 00 00 00-02 00 01 00 04 00 00 12 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000800 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000810 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000820 02 00 01 00 23 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000830 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000840 00 00 00 00 00 00 00 00-02 00 01 00 20 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000850 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000860 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000870 02 00 01 00 22 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000880 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000890 00 00 00 00 00 00 00 00-02 00 01 00 0c 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000008a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000008b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000008c0 02 00 01 00 4a 00 00 12-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000008d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000008e0 00 00 00 00 00 00 00 00-02 00 01 00 72 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000008f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000900 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000910 02 00 01 00 eb ed bd 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000920 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000930 00 00 00 00 00 00 00 00-02 00 01 00 4c 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000940 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000950 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000960 02 00 01 00 42 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000970 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000980 00 00 00 00 00 00 00 00-02 00 01 00 54 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000990 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000009a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000009b0 02 00 01 00 46 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000009c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000009d0 00 00 00 00 00 00 00 00-02 00 01 00 52 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000009e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000009f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a00 02 00 01 00 06 00 00 14-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a10 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a20 00 00 00 00 00 00 00 00-02 00 01 00 51 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a30 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a40 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a50 02 00 01 00 88 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a60 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a70 00 00 00 00 00 00 00 00-02 00 01 00 81 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a80 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a90 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000aa0 02 00 01 00 71 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ab0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ac0 00 00 00 00 00 00 00 00-02 00 01 00 87 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ad0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ae0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000af0 02 00 01 00 75 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b00 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b10 00 00 00 00 00 00 00 00-02 00 01 00 05 00 00 12 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b20 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b30 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b40 02 00 01 00 08 00 00 14-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b50 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b60 00 00 00 00 00 00 00 00-02 00 01 00 0d 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b70 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b80 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b90 02 00 01 00 53 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ba0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000bb0 00 00 00 00 00 00 00 00-02 00 01 00 7b 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000bc0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000bd0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000be0 02 00 01 00 4b 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000bf0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c00 00 00 00 00 00 00 00 00-02 00 01 00 0f 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c10 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c20 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c30 02 00 01 00 07 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c40 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c50 00 00 00 00 00 00 00 00-01 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c60 1a 51 d4 9b 37 58 b3 b2-d0 ff 4e ab 8f b6 47 2f 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c70 bf 1d 96 ea 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c80 02 00 01 00 c3 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c90 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ca0 00 00 00 00 00 00 00 00-02 00 01 00 03 00 00 23 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000cb0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000cc0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000cd0 02 00 01 00 c2 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ce0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000cf0 00 00 00 00 00 00 00 00-02 00 01 00 60 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d00 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d10 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d20 02 00 01 00 e0 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d30 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d40 00 00 00 00 00 00 00 00-02 00 01 00 f7 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d50 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d60 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d70 02 00 01 00 50 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d80 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d90 00 00 00 00 00 00 00 00-02 00 01 00 13 00 00 22 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000da0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000db0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000dc0 02 00 01 00 a1 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000dd0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000de0 00 00 00 00 00 00 00 00-02 00 01 00 10 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000df0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e00 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e10 02 00 01 00 41 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e20 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e30 00 00 00 00 00 00 00 00-02 00 01 00 24 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e40 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e50 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e60 02 00 01 00 a5 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e70 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e80 00 00 00 00 00 00 00 00-02 00 01 00 e1 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e90 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ea0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000eb0 02 00 01 00 42 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ec0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ed0 00 00 00 00 00 00 00 00-02 00 01 00 43 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ee0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ef0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f00 02 00 01 00 c1 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f10 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f20 00 00 00 00 00 00 00 00-02 00 01 00 c0 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f30 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f40 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f50 02 00 01 00 65 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f60 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f70 00 00 00 00 00 00 00 00-02 00 01 00 a3 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f80 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f90 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000fa0 02 00 01 00 30 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000fb0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000fc0 00 00 00 00 00 00 00 00-02 00 01 00 66 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000fd0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000fe0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ff0 02 00 01 00 f6 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001000 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001010 00 00 00 00 00 00 00 00-02 00 01 00 f5 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001020 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001030 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001040 02 00 01 00 f9 00 00 22-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001050 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001060 00 00 00 00 00 00 00 00-02 00 01 00 14 01 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001070 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001080 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001090 02 00 01 00 fd 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000010a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000010b0 00 00 00 00 00 00 00 00-02 00 01 00 fe 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000010c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000010d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000010e0 02 00 01 00 10 01 00 22-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000010f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001100 00 00 00 00 00 00 00 00-02 00 01 00 ff 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001110 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001120 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001130 02 00 01 00 f4 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001140 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001150 00 00 00 00 00 00 00 00-02 00 01 00 f3 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001160 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001170 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001180 02 00 01 00 15 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001190 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000011a0 00 00 00 00 00 00 00 00-02 00 01 00 f0 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000011b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000011c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000011d0 02 00 01 00 fa 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000011e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000011f0 00 00 00 00 00 00 00 00-02 00 01 00 12 01 00 22 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001200 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001210 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001220 02 00 01 00 13 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001230 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001240 00 00 00 00 00 00 00 00-02 00 01 00 fb 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001250 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001260 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001270 02 00 01 00 f8 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001280 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001290 00 00 00 00 00 00 00 00-02 00 01 00 fc 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000012a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000012b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000012c0 02 00 01 00 16 01 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000012d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000012e0 00 00 00 00 00 00 00 00-02 00 01 00 32 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000012f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001300 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001310 02 00 01 00 b0 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001320 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001330 00 00 00 00 00 00 00 00-02 00 01 00 90 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001340 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001350 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001360 02 00 01 00 64 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001370 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001380 00 00 00 00 00 00 00 00-02 00 01 00 62 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001390 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000013a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000013b0 02 00 01 00 71 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000013c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000013d0 00 00 00 00 00 00 00 00-02 00 01 00 30 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000013e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000013f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001400 02 00 01 00 61 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001410 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001420 00 00 00 00 00 00 00 00-02 00 01 00 c4 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001430 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001440 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001450 02 00 01 00 01 00 00 21-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001460 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001470 00 00 00 00 00 00 00 00-02 00 01 00 21 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001480 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001490 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000014a0 02 00 01 00 72 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000014b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000014c0 00 00 00 00 00 00 00 00-02 00 01 00 33 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000014d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000014e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000014f0 02 00 01 00 63 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001500 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001510 00 00 00 00 00 00 00 00-02 00 01 00 31 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001520 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001530 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001540 02 00 01 00 80 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001550 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001560 00 00 00 00 00 00 00 00-02 00 01 00 91 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001570 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001580 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001590 02 00 01 00 00 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000015a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000015b0 00 00 00 00 00 00 00 00-02 00 01 00 a6 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000015c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000015d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000015e0 02 00 01 00 70 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000015f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001600 00 00 00 00 00 00 00 00-02 00 01 00 54 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001610 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001620 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001630 02 00 01 00 51 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001640 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001650 00 00 00 00 00 00 00 00-02 00 01 00 a2 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001660 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001670 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001680 02 00 01 00 a4 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001690 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000016a0 00 00 00 00 00 00 00 00-02 00 01 00 40 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000016b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000016c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000016d0 02 00 01 00 55 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000016e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000016f0 00 00 00 00 00 00 00 00-02 00 01 00 21 01 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001700 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001710 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001720 02 00 01 00 22 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001730 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001740 00 00 00 00 00 00 00 00-02 00 01 00 23 01 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001750 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001760 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001770 02 00 01 00 24 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001780 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001790 00 00 00 00 00 00 00 00-02 00 01 00 25 01 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000017a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000017b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000017c0 02 00 01 00 26 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000017d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000017e0 00 00 00 00 00 00 00 00-02 00 01 00 27 01 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000017f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001800 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001810 02 00 01 00 28 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001820 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001830 00 00 00 00 00 00 00 00-02 00 01 00 2b 01 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001840 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001850 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001860 02 00 01 00 20 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001870 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001880 00 00 00 00 00 00 00 00-02 00 01 00 2a 01 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001890 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000018a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000018b0 02 00 01 00 29 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000018c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000018d0 00 00 00 00 00 00 00 00-02 00 00 00 01 00 00 11 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000018e0 2e 49 88 6b 59 ca cd 83-bb 9f a0 50 6f 73 cd bc 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000018f0 7d 03 30 2c e7 a7 b3 4b-95 92 20 91 4b 6c 51 50 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001900 02 00 00 00 02 00 00 12-67 ea 4f 93 7f 6d 00 9a 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001910 ce 74 a1 cb 84 ee 15 a6-12 9b 0e 4e 98 6a ac 59 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001920 86 4a 24 bd 71 29 36 f5-02 00 00 00 60 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001930 47 dc 54 0c 94 ce b7 04-a2 38 75 c1 12 73 e1 6b 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001940 b0 b8 a8 7a ed 84 de 91-1f 21 33 56 81 15 f2 54 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001950 02 00 00 00 02 00 00 22-60 eb aa 8b 60 00 49 89 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001960 7c e8 75 60 cb 6b 38 6b-39 dc d3 db 0b d0 8a 46 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001970 ac 6a 44 ef e7 53 45 cd-02 00 00 00 20 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001980 af 55 70 f5 a1 81 0b 7a-f7 8c af 4b c7 0a 66 0f 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001990 0d f5 1e 42 ba f9 1d 4d-e5 b2 32 8d e0 e8 3d fc 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000019a0 01 00 00 00 00 00 00 00-82 1c 90 94 2e b7 a8 1c 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000019b0 8d 87 92 b1 9a 46 75 a1-cb 47 df 84 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000019c0 00 00 00 00 00 00 00 00-02 00 01 00 05 00 00 21 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000019d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000019e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000019f0 02 00 01 00 08 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001a00 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001a10 00 00 00 00 00 00 00 00-02 00 01 00 07 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001a20 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001a30 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001a40 02 00 01 00 24 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001a50 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001a60 00 00 00 00 00 00 00 00-02 00 01 00 03 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001a70 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001a80 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001a90 02 00 01 00 04 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001aa0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001ab0 00 00 00 00 00 00 00 00-02 00 00 00 01 00 00 11 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001ac0 2e 49 88 6b 59 ca cd 83-bb 9f a0 50 6f 73 cd bc 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001ad0 7d 03 30 2c e7 a7 b3 4b-95 92 20 91 4b 6c 51 50 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001ae0 02 00 00 00 02 00 00 12-b1 ca 63 31 34 6e 7b d9 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001af0 91 8f a1 ef 03 f9 82 e5-76 a0 5c 9b 08 52 b3 2d 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001b00 73 b8 e5 96 b3 89 5d 51-02 00 00 00 60 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001b10 47 dc 54 0c 94 ce b7 04-a2 38 75 c1 12 73 e1 6b 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001b20 b0 b8 a8 7a ed 84 de 91-1f 21 33 56 81 15 f2 54 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001b30 02 00 00 00 01 00 00 21-2e 49 88 6b 59 ca cd 83 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001b40 bb 9f a0 50 6f 73 cd bc-7d 03 30 2c e7 a7 b3 4b 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001b50 95 92 20 91 4b 6c 51 50-02 00 00 00 02 00 00 22 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001b60 1b 6d 87 8d 47 4a 98 54-c0 4e f0 3c de c5 4a 33 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001b70 37 b2 c2 51 ca 13 ce 00-dc f8 4d 68 ad 16 56 b8 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001b80 02 00 00 00 06 00 00 26-96 a2 96 d2 24 f2 85 c6 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001b90 7b ee 93 c3 0f 8a 30 91-57 f0 da a3 5d c5 b8 7e 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001ba0 41 0b 78 63 0a 09 cf c7-01 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001bb0 cf 49 b4 2e 6c 4a c7 7e-4a 15 7a cd a6 2e 7d 05 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001bc0 48 51 35 49 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001bd0 02 00 01 00 03 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001be0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001bf0 00 00 00 00 00 00 00 00-02 00 01 00 09 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001c00 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001c10 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001c20 02 00 01 00 04 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001c30 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001c40 00 00 00 00 00 00 00 00-02 00 01 00 06 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001c50 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001c60 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001c70 02 00 01 00 07 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001c80 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001c90 00 00 00 00 00 00 00 00-02 00 01 00 01 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001ca0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001cb0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001cc0 02 00 01 00 08 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001cd0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001ce0 00 00 00 00 00 00 00 00-02 00 01 00 05 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001cf0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001d00 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001d10 02 00 01 00 02 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001d20 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001d30 00 00 00 00 00 00 00 00-02 00 00 00 01 00 00 11 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001d40 51 fe ef f8 ce cd 7f 97-bf cd d9 64 74 86 0b ba 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001d50 34 e1 e4 9d 51 6a bf a2-97 93 19 97 1f fc b6 07 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001d60 02 00 00 00 02 00 00 12-b2 f5 c6 91 a0 e4 30 ef 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001d70 37 27 2f 8a 5c 50 b0 01-ed f0 56 5f 0b 87 4e 60 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001d80 35 bb 81 2d c8 18 17 b9 
+Wed Feb  8 12:40:36 2023 [DEBUG] =========================================
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x19d0, 0x11, 0x7, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] 
+Wed Feb  8 12:40:36 2023 [DEBUG] =======[ Datum n°7 information ]=======
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x19d0 (6608) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 17
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 7
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> VALIDATION -- Total size header: 8 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Generic datum:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 02 00 01 00 06 00 00 36-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000010 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000020 00 00 00 00 00 00 00 00-02 00 01 00 05 00 00 35 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000030 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000040 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000050 02 00 01 00 01 00 00 35-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000060 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000070 00 00 00 00 00 00 00 00-02 00 01 00 09 00 00 36 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000080 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000090 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000a0 02 00 01 00 0a 00 00 36-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000c0 00 00 00 00 00 00 00 00-02 00 01 00 03 00 00 31 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000000f0 02 00 01 00 04 00 00 32-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000100 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000110 00 00 00 00 00 00 00 00-02 00 01 00 07 00 00 35 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000120 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000130 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000140 02 00 01 00 02 00 00 35-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000150 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000160 00 00 00 00 00 00 00 00-02 00 01 00 0b 00 00 36 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000170 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000180 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000190 02 00 01 00 08 00 00 35-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000001a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000001b0 00 00 00 00 00 00 00 00-02 00 01 00 73 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000001c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000001d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000001e0 02 00 01 00 0b 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000001f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000200 00 00 00 00 00 00 00 00-02 00 01 00 77 00 00 17 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000210 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000220 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000230 02 00 01 00 09 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000240 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000250 00 00 00 00 00 00 00 00-02 00 01 00 0e 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000260 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000270 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000280 02 00 01 00 0a 00 00 17-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000290 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000002a0 00 00 00 00 00 00 00 00-02 00 01 00 74 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000002b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000002c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000002d0 02 00 01 00 58 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000002e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000002f0 00 00 00 00 00 00 00 00-02 00 01 00 59 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000300 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000310 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000320 02 00 01 00 6c 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000330 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000340 00 00 00 00 00 00 00 00-02 00 01 00 65 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000350 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000360 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000370 02 00 01 00 66 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000380 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000390 00 00 00 00 00 00 00 00-02 00 01 00 6e 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000003a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000003b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000003c0 02 00 01 00 6a 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000003d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000003e0 00 00 00 00 00 00 00 00-02 00 01 00 6d 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000003f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000400 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000410 02 00 01 00 67 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000420 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000430 00 00 00 00 00 00 00 00-02 00 01 00 55 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000440 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000450 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000460 02 00 01 00 78 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000470 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000480 00 00 00 00 00 00 00 00-02 00 01 00 69 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000490 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000004a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000004b0 02 00 01 00 6b 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000004c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000004d0 00 00 00 00 00 00 00 00-02 00 01 00 6f 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000004e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000004f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000500 02 00 01 00 56 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000510 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000520 00 00 00 00 00 00 00 00-02 00 01 00 57 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000530 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000540 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000550 02 00 01 00 68 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000560 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000570 00 00 00 00 00 00 00 00-02 00 01 00 47 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000580 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000590 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000005a0 02 00 01 00 50 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000005b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000005c0 00 00 00 00 00 00 00 00-02 00 01 00 15 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000005d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000005e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000005f0 02 00 01 00 14 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000600 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000610 00 00 00 00 00 00 00 00-02 00 01 00 19 00 00 12 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000620 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000630 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000640 02 00 01 00 17 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000650 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000660 00 00 00 00 00 00 00 00-02 00 01 00 1c 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000670 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000680 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000690 02 00 01 00 1a 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000006a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000006b0 00 00 00 00 00 00 00 00-02 00 01 00 1d 00 00 12 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000006c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000006d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000006e0 02 00 01 00 1b 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000006f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000700 00 00 00 00 00 00 00 00-02 00 01 00 1e 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000710 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000720 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000730 02 00 01 00 12 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000740 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000750 00 00 00 00 00 00 00 00-02 00 01 00 13 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000760 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000770 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000780 02 00 01 00 18 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000790 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000007a0 00 00 00 00 00 00 00 00-02 00 01 00 11 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000007b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000007c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000007d0 02 00 01 00 16 00 00 12-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000007e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000007f0 00 00 00 00 00 00 00 00-02 00 01 00 04 00 00 12 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000800 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000810 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000820 02 00 01 00 23 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000830 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000840 00 00 00 00 00 00 00 00-02 00 01 00 20 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000850 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000860 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000870 02 00 01 00 22 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000880 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000890 00 00 00 00 00 00 00 00-02 00 01 00 0c 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000008a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000008b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000008c0 02 00 01 00 4a 00 00 12-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000008d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000008e0 00 00 00 00 00 00 00 00-02 00 01 00 72 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000008f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000900 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000910 02 00 01 00 eb ed bd 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000920 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000930 00 00 00 00 00 00 00 00-02 00 01 00 4c 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000940 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000950 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000960 02 00 01 00 42 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000970 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000980 00 00 00 00 00 00 00 00-02 00 01 00 54 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000990 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000009a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000009b0 02 00 01 00 46 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000009c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000009d0 00 00 00 00 00 00 00 00-02 00 01 00 52 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000009e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000009f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a00 02 00 01 00 06 00 00 14-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a10 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a20 00 00 00 00 00 00 00 00-02 00 01 00 51 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a30 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a40 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a50 02 00 01 00 88 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a60 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a70 00 00 00 00 00 00 00 00-02 00 01 00 81 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a80 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000a90 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000aa0 02 00 01 00 71 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ab0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ac0 00 00 00 00 00 00 00 00-02 00 01 00 87 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ad0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ae0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000af0 02 00 01 00 75 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b00 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b10 00 00 00 00 00 00 00 00-02 00 01 00 05 00 00 12 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b20 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b30 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b40 02 00 01 00 08 00 00 14-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b50 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b60 00 00 00 00 00 00 00 00-02 00 01 00 0d 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b70 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b80 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000b90 02 00 01 00 53 00 00 16-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ba0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000bb0 00 00 00 00 00 00 00 00-02 00 01 00 7b 00 00 15 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000bc0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000bd0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000be0 02 00 01 00 4b 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000bf0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c00 00 00 00 00 00 00 00 00-02 00 01 00 0f 00 00 16 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c10 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c20 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c30 02 00 01 00 07 00 00 15-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c40 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c50 00 00 00 00 00 00 00 00-02 00 01 00 01 00 00 11 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c60 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c70 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c80 02 00 01 00 c3 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000c90 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ca0 00 00 00 00 00 00 00 00-02 00 01 00 03 00 00 23 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000cb0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000cc0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000cd0 02 00 01 00 c2 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ce0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000cf0 00 00 00 00 00 00 00 00-02 00 01 00 60 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d00 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d10 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d20 02 00 01 00 e0 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d30 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d40 00 00 00 00 00 00 00 00-02 00 01 00 f7 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d50 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d60 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d70 02 00 01 00 50 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d80 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000d90 00 00 00 00 00 00 00 00-02 00 01 00 13 00 00 22 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000da0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000db0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000dc0 02 00 01 00 a1 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000dd0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000de0 00 00 00 00 00 00 00 00-02 00 01 00 10 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000df0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e00 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e10 02 00 01 00 41 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e20 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e30 00 00 00 00 00 00 00 00-02 00 01 00 24 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e40 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e50 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e60 02 00 01 00 a5 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e70 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e80 00 00 00 00 00 00 00 00-02 00 01 00 e1 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000e90 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ea0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000eb0 02 00 01 00 42 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ec0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ed0 00 00 00 00 00 00 00 00-02 00 01 00 43 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ee0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ef0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f00 02 00 01 00 c1 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f10 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f20 00 00 00 00 00 00 00 00-02 00 01 00 c0 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f30 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f40 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f50 02 00 01 00 65 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f60 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f70 00 00 00 00 00 00 00 00-02 00 01 00 a3 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f80 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000f90 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000fa0 02 00 01 00 30 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000fb0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000fc0 00 00 00 00 00 00 00 00-02 00 01 00 66 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000fd0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000fe0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000ff0 02 00 01 00 f6 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001000 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001010 00 00 00 00 00 00 00 00-02 00 01 00 f5 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001020 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001030 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001040 02 00 01 00 f9 00 00 22-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001050 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001060 00 00 00 00 00 00 00 00-02 00 01 00 14 01 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001070 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001080 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001090 02 00 01 00 fd 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000010a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000010b0 00 00 00 00 00 00 00 00-02 00 01 00 fe 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000010c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000010d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000010e0 02 00 01 00 10 01 00 22-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000010f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001100 00 00 00 00 00 00 00 00-02 00 01 00 ff 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001110 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001120 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001130 02 00 01 00 f4 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001140 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001150 00 00 00 00 00 00 00 00-02 00 01 00 f3 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001160 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001170 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001180 02 00 01 00 15 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001190 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000011a0 00 00 00 00 00 00 00 00-02 00 01 00 f0 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000011b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000011c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000011d0 02 00 01 00 fa 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000011e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000011f0 00 00 00 00 00 00 00 00-02 00 01 00 12 01 00 22 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001200 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001210 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001220 02 00 01 00 13 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001230 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001240 00 00 00 00 00 00 00 00-02 00 01 00 fb 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001250 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001260 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001270 02 00 01 00 f8 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001280 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001290 00 00 00 00 00 00 00 00-02 00 01 00 fc 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000012a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000012b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000012c0 02 00 01 00 16 01 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000012d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000012e0 00 00 00 00 00 00 00 00-02 00 01 00 32 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000012f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001300 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001310 02 00 01 00 b0 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001320 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001330 00 00 00 00 00 00 00 00-02 00 01 00 90 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001340 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001350 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001360 02 00 01 00 64 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001370 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001380 00 00 00 00 00 00 00 00-02 00 01 00 62 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001390 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000013a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000013b0 02 00 01 00 71 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000013c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000013d0 00 00 00 00 00 00 00 00-02 00 01 00 30 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000013e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000013f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001400 02 00 01 00 61 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001410 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001420 00 00 00 00 00 00 00 00-02 00 01 00 c4 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001430 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001440 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001450 02 00 01 00 01 00 00 21-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001460 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001470 00 00 00 00 00 00 00 00-02 00 01 00 21 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001480 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001490 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000014a0 02 00 01 00 72 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000014b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000014c0 00 00 00 00 00 00 00 00-02 00 01 00 33 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000014d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000014e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000014f0 02 00 01 00 63 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001500 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001510 00 00 00 00 00 00 00 00-02 00 01 00 31 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001520 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001530 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001540 02 00 01 00 80 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001550 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001560 00 00 00 00 00 00 00 00-02 00 01 00 91 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001570 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001580 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001590 02 00 01 00 00 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000015a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000015b0 00 00 00 00 00 00 00 00-02 00 01 00 a6 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000015c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000015d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000015e0 02 00 01 00 70 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000015f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001600 00 00 00 00 00 00 00 00-02 00 01 00 54 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001610 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001620 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001630 02 00 01 00 51 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001640 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001650 00 00 00 00 00 00 00 00-02 00 01 00 a2 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001660 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001670 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001680 02 00 01 00 a4 00 00 26-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001690 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000016a0 00 00 00 00 00 00 00 00-02 00 01 00 40 00 00 26 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000016b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000016c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000016d0 02 00 01 00 55 00 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000016e0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000016f0 00 00 00 00 00 00 00 00-02 00 01 00 21 01 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001700 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001710 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001720 02 00 01 00 22 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001730 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001740 00 00 00 00 00 00 00 00-02 00 01 00 23 01 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001750 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001760 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001770 02 00 01 00 24 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001780 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001790 00 00 00 00 00 00 00 00-02 00 01 00 25 01 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000017a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000017b0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000017c0 02 00 01 00 26 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000017d0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000017e0 00 00 00 00 00 00 00 00-02 00 01 00 27 01 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000017f0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001800 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001810 02 00 01 00 28 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001820 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001830 00 00 00 00 00 00 00 00-02 00 01 00 2b 01 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001840 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001850 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001860 02 00 01 00 20 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001870 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001880 00 00 00 00 00 00 00 00-02 00 01 00 2a 01 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001890 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000018a0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000018b0 02 00 01 00 29 01 00 25-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000018c0 00 00 00 00 00 00 00 00-00 00 00 00 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000018d0 00 00 00 00 00 00 00 00-02 00 00 00 02 00 00 12 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000018e0 c3 41 5d 40 c7 ed 60 bb-4d 1a 41 a2 59 df 8c bd 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000018f0 1e 27 9e b9 82 50 86 dc-78 49 cb b3 21 d9 60 84 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001900 02 00 00 00 02 00 00 22-47 45 f5 a3 d5 d4 7e 56 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001910 06 e1 db 84 14 8e de 20-1a 31 77 d9 80 4a 4a 59 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001920 74 be 75 13 46 55 94 66-02 00 00 00 20 00 00 25 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001930 af 55 70 f5 a1 81 0b 7a-f7 8c af 4b c7 0a 66 0f 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001940 0d f5 1e 42 ba f9 1d 4d-e5 b2 32 8d e0 e8 3d fc 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001950 02 00 00 00 22 00 00 26-47 dc 54 0c 94 ce b7 04 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001960 a2 38 75 c1 12 73 e1 6b-b0 b8 a8 7a ed 84 de 91 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001970 1f 21 33 56 81 15 f2 54-02 00 00 00 10 00 00 46 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001980 47 dc 54 0c 94 ce b7 04-a2 38 75 c1 12 73 e1 6b 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00001990 b0 b8 a8 7a ed 84 de 91-1f 21 33 56 81 15 f2 54 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000019a0 03 00 00 00 00 00 00 00-33 d4 cd 9d 78 ca 03 40 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000019b0 a2 5f 07 4d ca b4 02 d6-fa b7 02 c3 42 08 0d 01 
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x000019c0 fa d8 46 9d e0 e3 13 c9 
+Wed Feb  8 12:40:36 2023 [DEBUG] =========================================
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x64, 0xf, 0xf, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] 
+Wed Feb  8 12:40:36 2023 [DEBUG] =======[ Datum n°8 information ]=======
+Wed Feb  8 12:40:36 2023 [DEBUG] Total datum size: 0x0064 (100) bytes
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum entry type: 15
+Wed Feb  8 12:40:36 2023 [DEBUG] Datum value type: 15
+Wed Feb  8 12:40:36 2023 [DEBUG]    `--> VIRTUALIZATION INFO -- Total size header: 24 -- Nested datum: no
+Wed Feb  8 12:40:36 2023 [DEBUG] Status: 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] NTFS boot sectors address:  0x4b48000
+Wed Feb  8 12:40:36 2023 [DEBUG] Number of backuped bytes: 0x2000 (8192)
+Wed Feb  8 12:40:36 2023 [DEBUG] Unknown:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 05 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] Size: 0x004c (76)
+Wed Feb  8 12:40:36 2023 [DEBUG] Unknown:
+Wed Feb  8 12:40:36 2023 [DEBUG] 0x00000000 00 00 00 00 
+Wed Feb  8 12:40:36 2023 [DEBUG] Flags: 0x6 (6)
+Wed Feb  8 12:40:36 2023 [DEBUG] Convert Log offset: 0x0000000000000000
+Wed Feb  8 12:40:36 2023 [DEBUG] Convert Log size:   0x00000000 (0)
+Wed Feb  8 12:40:36 2023 [DEBUG] Sector size (1): 0x200 (512)
+Wed Feb  8 12:40:36 2023 [DEBUG] Sector size (2): 0x200 (512)
+Wed Feb  8 12:40:36 2023 [DEBUG] =========================================
+Wed Feb  8 12:40:36 2023 [DEBUG] Metadata files size: 0x10000
+Wed Feb  8 12:40:36 2023 [DEBUG] Entering get_next_datum...
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x50, 0xb, 0x5, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x44, 0x7, 0x2, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x13c, 0x2, 0x8, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x50, 0x3, 0x5, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x28e, 0x2, 0x8, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x1d90, 0x4, 0x7, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x19d0, 0x11, 0x7, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x64, 0xf, 0xf, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Going out of get_next_datum
+Wed Feb  8 12:40:36 2023 [DEBUG] Virtualized info size: 0x2000
+Wed Feb  8 12:40:36 2023 [DEBUG] Got extended info
+Wed Feb  8 12:40:36 2023 [DEBUG] New memory allocation at 0x5643a8fe72a0 (0x4 bytes allocated)
+Wed Feb  8 12:40:36 2023 [DEBUG] Entering has_clear_key. Returning result of get_vmk_datum_from_range with range between 0x00 and 0xff
+Wed Feb  8 12:40:36 2023 [DEBUG] Entering get_next_datum...
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x50, 0xb, 0x5, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x44, 0x7, 0x2, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x13c, 0x2, 0x8, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Going out of get_next_datum
+Wed Feb  8 12:40:36 2023 [DEBUG] Entering get_next_datum...
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x50, 0x3, 0x5, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x28e, 0x2, 0x8, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Going out of get_next_datum
+Wed Feb  8 12:40:36 2023 [DEBUG] Entering get_next_datum...
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x1d90, 0x4, 0x7, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x19d0, 0x11, 0x7, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Header safe: 0x64, 0xf, 0xf, 0x1
+Wed Feb  8 12:40:36 2023 [DEBUG] Hit limit, search failed.
+Wed Feb  8 12:40:36 2023 [DEBUG] Going out of get_next_datum
+Wed Feb  8 12:40:36 2023 [ERROR] No clear key found. Use a different method.
+Wed Feb  8 12:40:36 2023 [DEBUG] Freeing pointer at address 0x5643a8fe72a0
+Wed Feb  8 12:40:36 2023 [CRITICAL] None of the provided decryption mean is decrypting the keys. Abort.
+Wed Feb  8 12:40:36 2023 [CRITICAL] Unable to grab VMK or FVEK. Abort.
+Wed Feb  8 12:40:36 2023 [DEBUG] Freeing pointer at address 0x5643a8fe3390
+Wed Feb  8 12:40:36 2023 [DEBUG] Freeing pointer at address 0x5643a8fe35a0
+Wed Feb  8 12:40:36 2023 [DEBUG] Freeing pointer at address 0x5643a8fe32d0
+Wed Feb  8 12:40:36 2023 [DEBUG] Freeing pointer at address 0x5643a8fe32f0
+Wed Feb  8 12:40:36 2023 [DEBUG] Freeing pointer at address 0x5643a8fe05c0
+Wed Feb  8 12:40:36 2023 [DEBUG] Trying to close fd #3...

@@ -1,0 +1,437 @@
+Fri Jun  2 11:40:22 2023 [DEBUG] Verbosity level to DEBUG (4) into 'stdout'
+Fri Jun  2 11:40:22 2023 [INFO] dislocker by Romain Coltel, v0.7.2 (compiled for Linux/x86_64)
+Fri Jun  2 11:40:22 2023 [DEBUG] --- Config...
+Fri Jun  2 11:40:22 2023 [DEBUG]    Verbosity: 4
+Fri Jun  2 11:40:22 2023 [DEBUG]    Trying to decrypt '/dev/nvme0n1p3'
+Fri Jun  2 11:40:22 2023 [DEBUG]    	using a clear key on the volume
+Fri Jun  2 11:40:22 2023 [DEBUG]    Using the first valid metadata block
+Fri Jun  2 11:40:22 2023 [DEBUG] ... End config ---
+Fri Jun  2 11:40:22 2023 [DEBUG] Trying to open '/dev/nvme0n1p3'...
+Fri Jun  2 11:40:22 2023 [DEBUG] Trying to open '/dev/nvme0n1p3'...
+Fri Jun  2 11:40:22 2023 [DEBUG] Opened (fd #3).
+Fri Jun  2 11:40:22 2023 [DEBUG] Opened (fd #3).
+Fri Jun  2 11:40:22 2023 [DEBUG] New memory allocation at 0x559ec0b6ad90 (0x18 bytes allocated)
+Fri Jun  2 11:40:22 2023 [DEBUG] New memory allocation at 0x559ec0b6adb0 (0x90 bytes allocated)
+Fri Jun  2 11:40:22 2023 [DEBUG] New memory allocation at 0x559ec0b6ae50 (0x200 bytes allocated)
+Fri Jun  2 11:40:22 2023 [DEBUG] Positioning #3 at offset 0 from 0
+Fri Jun  2 11:40:22 2023 [DEBUG] Reading volume header...
+Fri Jun  2 11:40:22 2023 [DEBUG] Reading 0x200 bytes from #3 into 0x559ec0b6ae50
+Fri Jun  2 11:40:22 2023 [DEBUG] Volume header read
+Fri Jun  2 11:40:22 2023 [DEBUG] =====[ Volume header information ]=====
+Fri Jun  2 11:40:22 2023 [DEBUG]   Signature: '-FVE-FS-'
+Fri Jun  2 11:40:22 2023 [DEBUG]   Sector size: 0x0200 (512) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG]   Sector per cluster: 0x08 (8) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG]   Reserved clusters: 0x0000 (0) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG]   Fat count: 0x00 (0) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG]   Root entries: 0x0000 (0) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG]   Number of sectors (16 bits): 0x0000 (0) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG]   Media descriptor: 0xf8 (248) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG]   Sectors per fat: 0x0000 (0) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG]   Hidden sectors: 0x0003a800 (239616) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG]   Number of sectors (32 bits): 0x00000000 (0) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG]   Number of sectors (64 bits): 0x0000000000000000 (0) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG]   MFT start cluster: 0x0000000000060001 (393217) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG]   Metadata Lcn: 0x0000000000000000 (0) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG]   Volume GUID: '4967D63B-2E29-4AD8-8399-F6A339E3D001'
+Fri Jun  2 11:40:22 2023 [DEBUG]   First metadata header offset:  0x00000000028a1000
+Fri Jun  2 11:40:22 2023 [DEBUG]   Second metadata header offset: 0x00000000c6600000
+Fri Jun  2 11:40:22 2023 [DEBUG]   Third metadata header offset:  0x00000000c6610000
+Fri Jun  2 11:40:22 2023 [DEBUG]   Boot Partition Identifier: '0xaa55'
+Fri Jun  2 11:40:22 2023 [DEBUG] ========================================
+Fri Jun  2 11:40:22 2023 [INFO] Volume GUID (INFORMATION OFFSET) supported
+Fri Jun  2 11:40:22 2023 [DEBUG] Entering get_metadata_lazy_checked
+Fri Jun  2 11:40:22 2023 [DEBUG] Positioning #3 at offset 42602496 from 0
+Fri Jun  2 11:40:22 2023 [DEBUG] Reading bitlocker header at 0x28a1000...
+Fri Jun  2 11:40:22 2023 [DEBUG] Reading 0x70 bytes from #3 into 0x7ffefbf634d0
+Fri Jun  2 11:40:22 2023 [DEBUG] New memory allocation at 0x559ec0b6b060 (0x5b0 bytes allocated)
+Fri Jun  2 11:40:22 2023 [DEBUG] Reading data...
+Fri Jun  2 11:40:22 2023 [DEBUG] Reading 0x540 bytes from #3 into 0x559ec0b6b0d0
+Fri Jun  2 11:40:22 2023 [DEBUG] End get_metadata.
+Fri Jun  2 11:40:22 2023 [DEBUG] Reading validations data at offset 0x28a15b0.
+Fri Jun  2 11:40:22 2023 [DEBUG] Positioning #3 at offset 42603952 from 0
+Fri Jun  2 11:40:22 2023 [DEBUG] Reading 0x8 bytes from #3 into 0x7ffefbf635a8
+Fri Jun  2 11:40:22 2023 [DEBUG] Looking if 0xf4d7fd60 == 0xf4d7fd60 for metadata validation
+Fri Jun  2 11:40:22 2023 [DEBUG] We have a winner (n°1)!
+Fri Jun  2 11:40:22 2023 [INFO] BitLocker metadata found and parsed.
+Fri Jun  2 11:40:22 2023 [DEBUG] =====================[ BitLocker information structure ]=====================
+Fri Jun  2 11:40:22 2023 [DEBUG]   Signature: '-FVE-FS-'
+Fri Jun  2 11:40:22 2023 [DEBUG]   Total Size: 0x05b0 (1456) bytes (including signature and data)
+Fri Jun  2 11:40:22 2023 [DEBUG]   Version: 2
+Fri Jun  2 11:40:22 2023 [DEBUG]   Current state: ENCRYPTED (4)
+Fri Jun  2 11:40:22 2023 [DEBUG]   Next state: ENCRYPTED (4)
+Fri Jun  2 11:40:22 2023 [DEBUG]   Encrypted volume size: 36700160000 bytes (0x88b800000), ~35000 MB
+Fri Jun  2 11:40:22 2023 [DEBUG]   Size of conversion region: 0 (0)
+Fri Jun  2 11:40:22 2023 [DEBUG]   Number of boot sectors backuped: 16 sectors (0x10)
+Fri Jun  2 11:40:22 2023 [DEBUG]   First metadata header offset:  0x28a1000
+Fri Jun  2 11:40:22 2023 [DEBUG]   Second metadata header offset: 0xc6600000
+Fri Jun  2 11:40:22 2023 [DEBUG]   Third metadata header offset:  0xc6610000
+Fri Jun  2 11:40:22 2023 [DEBUG]   Boot sectors backup address:   0x28b1000
+Fri Jun  2 11:40:22 2023 [DEBUG] New memory allocation at 0x559ec0b6b620 (0xc bytes allocated)
+Fri Jun  2 11:40:22 2023 [DEBUG]   ----------------------------{ Dataset header }----------------------------
+Fri Jun  2 11:40:22 2023 [DEBUG]     Dataset size: 0x0000056e (1390) bytes (including data)
+Fri Jun  2 11:40:22 2023 [DEBUG]     Unknown data: 0x00000001 (always 0x00000001)
+Fri Jun  2 11:40:22 2023 [DEBUG]     Dataset header size: 0x00000030 (always 0x00000030)
+Fri Jun  2 11:40:22 2023 [DEBUG]     Dataset copy size: 0x0000056e (1390) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG]     Dataset GUID: '1FC83C54-D590-4086-A825-DFBC4567BD67'
+Fri Jun  2 11:40:22 2023 [DEBUG]     Next counter: 20
+Fri Jun  2 11:40:22 2023 [DEBUG]     Encryption Type: AES-XTS-128 (0x8004)
+Fri Jun  2 11:40:22 2023 [DEBUG]     Epoch Timestamp: 1685630999 sec, that to say Thu Jun  1 14:49:59 2023
+Fri Jun  2 11:40:22 2023 [DEBUG]   --------------------------------------------------------------------------
+Fri Jun  2 11:40:22 2023 [DEBUG] Freeing pointer at address 0x559ec0b6b620
+Fri Jun  2 11:40:22 2023 [DEBUG] =============================================================================
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x44, 0x7, 0x2, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] 
+Fri Jun  2 11:40:22 2023 [DEBUG] =======[ Datum n°1 information ]=======
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x0044 (68) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 7
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 2
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> UNICODE -- Total size header: 8 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] New memory allocation at 0x559ec0b6b670 (0x78 bytes allocated)
+Fri Jun  2 11:40:22 2023 [DEBUG] UTF-16 string: 'DESKTOP-LBLPGHL C: 01/06/2023'
+Fri Jun  2 11:40:22 2023 [DEBUG] Freeing pointer at address 0x559ec0b6b670
+Fri Jun  2 11:40:22 2023 [DEBUG] =========================================
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x50, 0x3, 0x5, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] 
+Fri Jun  2 11:40:22 2023 [DEBUG] =======[ Datum n°2 information ]=======
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x0050 (80) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 3
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE FVEK (FveDatasetVmkGetFvek)
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 5
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Nonce: 
+Fri Jun  2 11:40:22 2023 [DEBUG] e0 1a c1 dd 2c 95 d9 01 09 00 00 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] MAC: 
+Fri Jun  2 11:40:22 2023 [DEBUG] 33 d7 55 ed 4b 36 15 97 8b af ab 52 58 f4 b6 81 
+Fri Jun  2 11:40:22 2023 [DEBUG] Payload:
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 4e 2d 3b 98 0f f0 8a 69-a3 48 ce f3 76 8b 0a 35 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000010 b6 e0 cc 21 f3 50 81 7c-e5 f0 fd 93 66 2d d4 e1 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000020 4a 3c 1a d1 f7 32 5f 3b-ca d5 f2 2c 
+Fri Jun  2 11:40:22 2023 [DEBUG] =========================================
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x50, 0xb, 0x5, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] 
+Fri Jun  2 11:40:22 2023 [DEBUG] =======[ Datum n°3 information ]=======
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x0050 (80) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 11
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE FVEK (TryObtainKey)
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 5
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Nonce: 
+Fri Jun  2 11:40:22 2023 [DEBUG] e0 1a c1 dd 2c 95 d9 01 0a 00 00 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] MAC: 
+Fri Jun  2 11:40:22 2023 [DEBUG] 4a 4c b3 bf 28 80 a9 dd 69 ca ff 1f 58 e7 b6 f5 
+Fri Jun  2 11:40:22 2023 [DEBUG] Payload:
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 23 4d d6 6a c6 f4 8d 8e-27 6d 71 9e 58 f6 8c bf 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000010 4e 12 75 ed d6 32 1c d3-65 f2 7a 27 12 4e d7 12 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000020 50 64 1b f5 1a 90 32 6c-b8 e9 61 51 
+Fri Jun  2 11:40:22 2023 [DEBUG] =========================================
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x13c, 0x2, 0x8, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] 
+Fri Jun  2 11:40:22 2023 [DEBUG] =======[ Datum n°4 information ]=======
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x013c (316) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 2
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE VMK
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 8
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> VMK -- Total size header: 36 -- Nested datum: yes
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Recovery Key GUID: '38F91648-280E-4F3A-9772-640DCB48F4CE'
+Fri Jun  2 11:40:22 2023 [DEBUG] Nonce: 
+Fri Jun  2 11:40:22 2023 [DEBUG] 00 83 3a d1 2d 95 d9 01 00 00 00 08 
+Fri Jun  2 11:40:22 2023 [DEBUG]    ------ Nested datum(s) ------
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x00ac (172) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 0
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 3
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> STRETCH KEY -- Total size header: 28 -- Nested datum: yes
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Unknown: 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 00 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] Algo: 0x1000
+Fri Jun  2 11:40:22 2023 [DEBUG] Salt: 
+Fri Jun  2 11:40:22 2023 [DEBUG] 05 c0 e7 bf 02 2c 3e 49 93 ea 6a c1 d8 45 71 17 
+Fri Jun  2 11:40:22 2023 [DEBUG]    ------ Nested datum ------
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x0040 (64) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 18
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 5
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Nonce: 
+Fri Jun  2 11:40:22 2023 [DEBUG] e0 1a c1 dd 2c 95 d9 01 0b 00 00 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] MAC: 
+Fri Jun  2 11:40:22 2023 [DEBUG] 06 87 e8 0f e8 10 0b 71 12 a9 f2 04 d4 a2 f2 83 
+Fri Jun  2 11:40:22 2023 [DEBUG] Payload:
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 23 df e5 39 98 bb 9c da-a5 01 31 91 f5 85 27 45 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000010 ee 7f a2 ff c5 cc e1 58-c2 04 79 24 
+Fri Jun  2 11:40:22 2023 [DEBUG]    ---------------------------
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0xac, 0, 0x3, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x0050 (80) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 0
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 5
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Nonce: 
+Fri Jun  2 11:40:22 2023 [DEBUG] e0 1a c1 dd 2c 95 d9 01 0d 00 00 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] MAC: 
+Fri Jun  2 11:40:22 2023 [DEBUG] 70 4e 25 2d ed 8d 18 4d 3c 2e b2 0b a0 53 bf d9 
+Fri Jun  2 11:40:22 2023 [DEBUG] Payload:
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 c1 95 ce 7d b7 e3 1b 51-62 43 77 42 c4 ca f9 63 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000010 58 79 fe db e3 49 6c 78-02 12 4f 8e e5 0f 9f 15 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000020 0a 2c 8f 8c ca b4 84 8e-b4 53 60 a3 
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x50, 0, 0x5, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x001c (28) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 0
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 21
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ERROR -- Total size header: 1676 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Generic datum:
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 10 56 e8 e0 2d 95 d9 01-10 56 e8 e0 2d 95 d9 01 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000010 08 00 02 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x1c, 0, 0x15, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG]    ------------------------------
+Fri Jun  2 11:40:22 2023 [DEBUG] =========================================
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x282, 0x2, 0x8, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] 
+Fri Jun  2 11:40:22 2023 [DEBUG] =======[ Datum n°5 information ]=======
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x0282 (642) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 2
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE VMK
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 8
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> VMK -- Total size header: 36 -- Nested datum: yes
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Recovery Key GUID: 'D3692920-75B5-42FF-9907-D5C4504623C1'
+Fri Jun  2 11:40:22 2023 [DEBUG] Nonce: 
+Fri Jun  2 11:40:22 2023 [DEBUG] 90 a8 8a a3 3c 95 d9 01 00 00 00 05 
+Fri Jun  2 11:40:22 2023 [DEBUG]    ------ Nested datum(s) ------
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x001c (28) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 0
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 2
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> UNICODE -- Total size header: 8 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] New memory allocation at 0x559ec0b6b640 (0x28 bytes allocated)
+Fri Jun  2 11:40:22 2023 [DEBUG] UTF-16 string: 'TPMAndPin'
+Fri Jun  2 11:40:22 2023 [DEBUG] Freeing pointer at address 0x559ec0b6b640
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x1c, 0, 0x2, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x006c (108) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 0
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 3
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> STRETCH KEY -- Total size header: 28 -- Nested datum: yes
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Unknown: 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 10 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] Algo: 0x2004
+Fri Jun  2 11:40:22 2023 [DEBUG] Salt: 
+Fri Jun  2 11:40:22 2023 [DEBUG] 69 3e d6 a8 1b e5 83 31 4f 8e 7e c8 63 0f 6a 87 
+Fri Jun  2 11:40:22 2023 [DEBUG]    ------ Nested datum ------
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x0050 (80) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 0
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 5
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Nonce: 
+Fri Jun  2 11:40:22 2023 [DEBUG] d0 75 f1 a2 3c 95 d9 01 0f 00 00 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] MAC: 
+Fri Jun  2 11:40:22 2023 [DEBUG] ab 16 66 95 c0 40 3b be 2f 6c 21 ff c9 98 ea 40 
+Fri Jun  2 11:40:22 2023 [DEBUG] Payload:
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 43 76 93 aa 71 ba 94 d7-1e bd eb 69 43 b5 10 8b 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000010 0e 0f 57 42 21 99 9e aa-f6 11 27 5f 3c 8d 33 9d 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000020 9e 63 9d 4d ca d3 07 7d-57 e8 35 5b 
+Fri Jun  2 11:40:22 2023 [DEBUG]    ---------------------------
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x6c, 0, 0x3, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x000c (12) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 0
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 16
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> SIMPLE 1 -- Total size header: 12 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Generic datum:
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 00 00 00 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0xc, 0, 0x10, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x001c (28) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 0
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 18
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> CONCAT HASH KEY -- Total size header: 28 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Generic datum:
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 42 69 74 4c 6f 63 6b 65-72 41 75 74 68 44 61 74 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000010 61 00 00 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x1c, 0, 0x12, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x0146 (326) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 0
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 6
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> TPM_ENCODED -- Total size header: 12 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Unknown: 0x880
+Fri Jun  2 11:40:22 2023 [DEBUG] Payload:
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 00 c2 00 20 d2 41 47 c9-98 4c c3 ae 0e 1c c6 69 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000010 55 9c d6 d2 0d 0f 87 12-89 93 2b 23 fb 2d cb c2 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000020 e4 54 3f d4 00 10 1f 79-b8 d0 dc dc 23 60 0a 75 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000030 bb 35 ef 74 b8 36 59 f6-a2 85 c6 31 9d 4f 00 90 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000040 1e cc a5 89 0a 16 2c fd-3c 88 f9 fc 09 a2 5a ec 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000050 30 15 51 22 1b 35 b3 fd-bc fa f9 29 fc d2 db 20 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000060 51 62 af f2 bd 98 95 45-1e 89 b6 98 1d d6 34 85 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000070 bb 16 7e fe e8 59 a4 65-15 f3 f7 10 49 98 ab 45 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000080 4d b9 9b 21 54 8c f0 52-45 60 36 05 e7 d6 5b 60 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000090 6c f7 e2 de aa 7b a9 3a-c0 51 98 7e 02 9d 7a da 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x000000a0 d1 a1 58 b5 24 41 53 24-80 e4 0a 1e c3 a9 6a e1 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x000000b0 a5 33 dc 7b 1a a9 6c b4-c7 f1 ed 08 df 36 1a 4e 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x000000c0 7c b8 55 68 00 4e 00 08-00 0b 00 00 00 12 00 20 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x000000d0 87 04 75 dd 84 27 8f 36-18 70 bb fd 32 ee b6 9b 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x000000e0 11 10 c6 3d 15 28 79 8c-4f 40 ce a9 9d 9b a3 d7 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x000000f0 00 10 00 20 4b 75 2a b3-8a d4 14 ef 18 07 c9 7a 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000100 d6 c3 d4 a9 a5 36 b6 0e-9f 96 77 f0 ea 4a 98 ab 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000110 56 a9 2a ce 00 20 27 4c-b5 f1 ba 14 fd 46 15 18 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000120 bf fc 36 6a 62 12 33 74-e9 b0 73 d0 75 c4 7f ad 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000130 2e 18 51 2a 7c f3 03 80-08 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x146, 0, 0x6, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x000c (12) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 0
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 17
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> SIMPLE 2 -- Total size header: 12 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Generic datum:
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 00 00 00 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0xc, 0, 0x11, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x000c (12) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 0
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 19
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> SIMPLE 3 -- Total size header: 12 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Generic datum:
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 00 00 00 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0xc, 0, 0x13, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x0050 (80) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 0
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 5
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Nonce: 
+Fri Jun  2 11:40:22 2023 [DEBUG] d0 75 f1 a2 3c 95 d9 01 11 00 00 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] MAC: 
+Fri Jun  2 11:40:22 2023 [DEBUG] b6 b6 50 38 86 1d ad e9 9f b0 1b 76 86 00 11 a7 
+Fri Jun  2 11:40:22 2023 [DEBUG] Payload:
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 e3 36 a2 a2 2d c9 07 9f-73 a1 d2 c6 39 f8 77 56 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000010 88 a6 47 ce 6f 72 ce 98-56 ae 58 a1 68 7b bb 06 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000020 c8 34 8f 6d c4 8d 26 58-a8 c2 69 b0 
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x50, 0, 0x5, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Jun  2 11:40:22 2023 [DEBUG]    ------------------------------
+Fri Jun  2 11:40:22 2023 [DEBUG] =========================================
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x8, 0x4, 0x7, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] 
+Fri Jun  2 11:40:22 2023 [DEBUG] =======[ Datum n°6 information ]=======
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x0008 (8) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 4
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> ENTRY TYPE UNKNOWN
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 7
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> VALIDATION -- Total size header: 8 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Generic datum:
+Fri Jun  2 11:40:22 2023 [DEBUG] =========================================
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x30, 0x11, 0x7, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] 
+Fri Jun  2 11:40:22 2023 [DEBUG] =======[ Datum n°7 information ]=======
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x0030 (48) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 17
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 7
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> VALIDATION -- Total size header: 8 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Generic datum:
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 03 00 00 00 c1 01 00 00-93 c0 a0 58 f7 40 65 12 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000010 58 93 fa 4f af d9 52 a5-57 f6 98 2d 0d e0 24 d1 
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000020 9a 48 e9 b4 f2 39 65 01 
+Fri Jun  2 11:40:22 2023 [DEBUG] =========================================
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x64, 0xf, 0xf, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] 
+Fri Jun  2 11:40:22 2023 [DEBUG] =======[ Datum n°8 information ]=======
+Fri Jun  2 11:40:22 2023 [DEBUG] Total datum size: 0x0064 (100) bytes
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum entry type: 15
+Fri Jun  2 11:40:22 2023 [DEBUG] Datum value type: 15
+Fri Jun  2 11:40:22 2023 [DEBUG]    `--> VIRTUALIZATION INFO -- Total size header: 24 -- Nested datum: no
+Fri Jun  2 11:40:22 2023 [DEBUG] Status: 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] NTFS boot sectors address:  0x28b1000
+Fri Jun  2 11:40:22 2023 [DEBUG] Number of backuped bytes: 0x2000 (8192)
+Fri Jun  2 11:40:22 2023 [DEBUG] Unknown:
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 05 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] Size: 0x004c (76)
+Fri Jun  2 11:40:22 2023 [DEBUG] Unknown:
+Fri Jun  2 11:40:22 2023 [DEBUG] 0x00000000 00 00 00 00 
+Fri Jun  2 11:40:22 2023 [DEBUG] Flags: 0x11007 (69639)
+Fri Jun  2 11:40:22 2023 [DEBUG] Convert Log offset: 0x0000000000000000
+Fri Jun  2 11:40:22 2023 [DEBUG] Convert Log size:   0x00000000 (0)
+Fri Jun  2 11:40:22 2023 [DEBUG] Sector size (1): 0x200 (512)
+Fri Jun  2 11:40:22 2023 [DEBUG] Sector size (2): 0x1000 (4096)
+Fri Jun  2 11:40:22 2023 [DEBUG] =========================================
+Fri Jun  2 11:40:22 2023 [DEBUG] Metadata files size: 0x10000
+Fri Jun  2 11:40:22 2023 [DEBUG] Entering get_next_datum...
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x44, 0x7, 0x2, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x50, 0x3, 0x5, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x50, 0xb, 0x5, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x13c, 0x2, 0x8, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x282, 0x2, 0x8, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x8, 0x4, 0x7, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x30, 0x11, 0x7, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x64, 0xf, 0xf, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Going out of get_next_datum
+Fri Jun  2 11:40:22 2023 [DEBUG] Virtualized info size: 0x2000
+Fri Jun  2 11:40:22 2023 [DEBUG] Got extended info
+Fri Jun  2 11:40:22 2023 [DEBUG] New memory allocation at 0x559ec0b6b620 (0x4 bytes allocated)
+Fri Jun  2 11:40:22 2023 [DEBUG] Entering has_clear_key. Returning result of get_vmk_datum_from_range with range between 0x00 and 0xff
+Fri Jun  2 11:40:22 2023 [DEBUG] Entering get_next_datum...
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x44, 0x7, 0x2, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x50, 0x3, 0x5, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x50, 0xb, 0x5, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x13c, 0x2, 0x8, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Going out of get_next_datum
+Fri Jun  2 11:40:22 2023 [DEBUG] Entering get_next_datum...
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x282, 0x2, 0x8, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Going out of get_next_datum
+Fri Jun  2 11:40:22 2023 [DEBUG] Entering get_next_datum...
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x8, 0x4, 0x7, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x30, 0x11, 0x7, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Header safe: 0x64, 0xf, 0xf, 0x1
+Fri Jun  2 11:40:22 2023 [DEBUG] Hit limit, search failed.
+Fri Jun  2 11:40:22 2023 [DEBUG] Going out of get_next_datum
+Fri Jun  2 11:40:22 2023 [ERROR] No clear key found. Use a different method.
+Fri Jun  2 11:40:22 2023 [DEBUG] Freeing pointer at address 0x559ec0b6b620
+Fri Jun  2 11:40:22 2023 [CRITICAL] None of the provided decryption mean is decrypting the keys. Abort.
+Fri Jun  2 11:40:22 2023 [CRITICAL] Unable to grab VMK or FVEK. Abort.
+Fri Jun  2 11:40:22 2023 [DEBUG] Freeing pointer at address 0x559ec0b6ae50
+Fri Jun  2 11:40:22 2023 [DEBUG] Freeing pointer at address 0x559ec0b6b060
+Fri Jun  2 11:40:22 2023 [DEBUG] Freeing pointer at address 0x559ec0b6ad90
+Fri Jun  2 11:40:22 2023 [DEBUG] Freeing pointer at address 0x559ec0b6adb0
+Fri Jun  2 11:40:22 2023 [DEBUG] Freeing pointer at address 0x559ec0b675c0
+Fri Jun  2 11:40:22 2023 [DEBUG] Trying to close fd #3...
