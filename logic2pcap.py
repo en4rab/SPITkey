@@ -38,6 +38,7 @@ def writeOutputToFile(output, filename):
                 print("data not written")
                 break
         else:
+            print("saving to file " + filename)
             file = open(filename, "w")
             file.write(output)
             file.close()
