@@ -95,7 +95,7 @@ def writePcap(output, filename):
         program = linux_exe
     else:
         program = None
-    
+
     if program is not None:
         pcapout = outfile + ".pcap"
         os.system(
