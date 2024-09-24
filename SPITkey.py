@@ -402,6 +402,10 @@ def get_vmk(filename):
     if blob[:4].lower() == "002c":   # if data is responseparams from wireshark
         blob = blob[4:]             # wireshark includes the param size header
 
+    if len(blob) == 64:              # support bare VMK without header
+        print("Found a bare VMK without header, adding a placeholder header")
+        blob = "2c0000000100000003200000" + blob
+
     blob = bytes.fromhex(blob)
     tpmkey = parse_key(blob)
     return tpmkey
