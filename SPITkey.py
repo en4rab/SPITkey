@@ -399,16 +399,24 @@ def get_vmk(filename):
     blob = blob.replace("\n", "")      # incase data is split on multiple lines
     blob = blob.replace(" ", "")       # strip spaces too
 
-    if blob[:4].lower() == "002c":   # if data is responseparams from wireshark
+    # if data is responseparams from wireshark
+    if blob[:4].lower() == "002c" and len(blob) == 92:
+        print("Found wireshark responseparams, trimming first two bytes")
         blob = blob[4:]             # wireshark includes the param size header
 
-    if len(blob) == 64:              # support bare VMK without header
+    # if data is the bare VMK without header
+    if len(blob) == 64:
         print("Found a bare VMK without header, adding a placeholder header")
         blob = "2c0000000100000003200000" + blob
 
-    blob = bytes.fromhex(blob)
-    tpmkey = parse_key(blob)
-    return tpmkey
+    # if data is the bare VMK without header
+    if len(blob) == 88:
+        blob = bytes.fromhex(blob)
+        tpmkey = parse_key(blob)
+        return tpmkey
+    else:
+        print("Invalid VMK file please check")
+        sys.exit()
 
 
 # --------------------------------------------------------------------------- #
