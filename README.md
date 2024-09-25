@@ -57,7 +57,7 @@ Convert exported csv data from libsigrokdecoder_spi-tpm.
 
 Convert exported csv data from locic2 using Withsecure's "TPM SPI" analyser
 
-- -p will output a text file suitable for use with Wireshark's text2pcap.exe If this is present it will be called to convert the file automatically
+- -p will output a text file suitable for use with Wireshark's text2pcap.exe If wireshark is installed it will be called to convert the file automatically
 - -k will extract the VMK or Blob and save it.
 
 > [!IMPORTANT]
@@ -69,7 +69,7 @@ Convert exported csv data from locic2 using Withsecure's "TPM SPI" analyser
 
 Convert the verbose log of an emulated tpm in QEMU using the swtpm package 
 
-- -p will output a text file suitable for use with wiresharks text2pcap.exe If this is present it will be called to convert the file automatically
+- -p will output a text file suitable for use with wiresharks text2pcap.exe If wireshark is installed it will be called to convert the file automatically
 - -k will extract the VMK or Blob and save it.
 
 This was writen when testing and is only left in incase it of use to someone. To output tpm traffic in the logfile swtpm needs to be called with the option ```--log level=20```
@@ -170,17 +170,7 @@ If the PC is using TPMandPIN or you wish to export a PIN only trace to a pcap
 the data needed for conversion to pcap is the trace labeled 
 "SPI TPM: TPM transactions" to save this right click on the trace and select 
 "Export all annotations for this row" and save the annotations as a text file.
-This Text file can then be converted to a pcap and/or searched for keys using 
-sigrok2pcap.py input_file -p -k the pcap file can then be opened in wireshark or 
-key data read directly from the found data files.
-
-If the PC was using TPMandPIN and you know the PIN you can now use the sniffed 
-data blob, the PIN and the dislocker log to recover the FVEK using SPITkey.py.
-
-If the PC was using TPMandPIN and you have built an implant and somehow managed
-to get the blob but don't know the PIN, well done! 
-You can use blob2john and the dislocker log to extract the hash needed to attepmt
-to bruteforce the PIN with John the ripper, hashcat or bitcracker.
+This text file can then be converted to a pcap or the key/blob extracted using sigrok2pcap.
 
 
 # Exporting trace data - Logic2
@@ -193,11 +183,12 @@ for the SPI analyser as we don't need that data but the extensions require that.
 For the TPM SPI extension select edit and change "operation selector" to both 
 so when you export the data it will have both read and write data.
 
-Now capture the spi data, if it was in PIN only the "Bitlocker Key Extractor"
-should have logged the key to the terminal.
-If not or you want to export the data to a pcap on the data table select export
-table and save the data as a CSV which you can convert to a pcap or extract the
-keys from using logic2pcap
+Now capture the spi data. The "Bitlocker Key Extractor" decoder should have logged the key
+or the blob to the terminal to let you know you were successful.
+
+To extract the key/blob or to export the data to a pcap the "TPI SPM" decoders output first
+needs to be exported a csv file.  
+On the Analyzers tab with the data table selected click on the three dots to the right of the search box.  Click on export table and select all columns, all data, CSV format and then save the data as a CSV. This can then be converted to a pcap or the key/blob extracted using logic2pcap. 
 
 # Extracting the key from a trace
 With the trace exported to a csv from logic2 or sigrock run the appropriate 
@@ -206,7 +197,21 @@ the -p flag will export the data to a pcap if you wish to view it in wireshark.
 
 # Decrypting the blob and or FVEK
 With the key or blob extracted from the csv run SPITKey.py with the appropriate 
-inputs for the protector in use (eg TPMandPIN needs the blob, the pin and the metadata)
+inputs for the protector in use:  
+TPM needs the VMK and the metadata  
+TPMandStartupKey needs the VMK, the BEK and the metadata  
+TPMandPIN needs the blob, the pin and the metadata  
+TPMandPINandStartupKey needs the blob, the pin, the BEK and the metadata  
+StartupKey needs the BEK and the metadata  
+Recovery needs the recovery key and the metadata  
 This will then decrypt the FVEK and save it out to a file so you can use it with dislocker.
-If the drive is using TPM only you can skip this step and just use the VMK 
-extracted from the CSV with dislocker.
+If the drive is using TPM only you can skip this step and just use the VMK extracted from the CSV with dislocker.
+
+# Using other TPM sniffers
+
+The output of the extractor scripts x2pcap.py save the VMK or blob including the header. SPITkey should accept a vmk or blob with or without the header or with the header and the additional 2 byte length if copied from wireshark. If you have used a tool such as Stacksmashing's Pico TPMSniffer you can use the bare vmk.
+
+If your capture is from a PC using TPMandPIN and you have built an implant and somehow managed
+to get the blob when the owner logged in but don't know the PIN, well done!  
+You can use blob2john and the dislocker log to extract the hash needed to attempt
+to brute force the PIN with John the ripper, hashcat or bitcracker.
