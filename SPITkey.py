@@ -327,25 +327,36 @@ def decrypt(data, key):
 
 
 # --------------------------------------------------------------------------- #
-# Get the TPM blob from a file. It accepts either just the blob data          #
-# or data with header in the file (responseparams in wireshark)               #
-# TODO: add some checks incase someone adds entire TPM packet                 #
+# Get the TPMandPIN blob from a file. It accepts either just the blob data    #
+# the blob data with header or the responseparams Hex Stream from wireshark   #
+# which is the blob data with header with an additional 2 byte length header  #
 # --------------------------------------------------------------------------- #
 def get_blob(filename):
+    print("Reading PIN encrypted VMK from file")
     filedata = open(filename, "r")
     blob = filedata.read()
     filedata.close()
     blob = blob.replace("\n", "")      # incase data is split on multiple lines
     blob = blob.replace(" ", "")       # strip spaces too
 
-    if blob[:4] == "0050":           # if data is responseparams from wireshark
-        blob = blob[20:]             # wireshark includes the param size header
-    if blob[:4] == "5000":           # if data is key from tpm2pcap skip header
+    # if data is responseparams from wireshark
+    if blob[:4] == "0050" and len(blob) == 164:
+        print("Found wireshark responseparams, trimming first two bytes")
+        blob = blob[4:]             # wireshark includes the param size header
+
+    # if data is the bare blob without header
+    if len(blob) == 144:
+        print("Found a bare blob without header, adding a placeholder header")
+        blob = "5000000005000000" + blob
+
+    # if data is the bare blob with header
+    if blob[:4] == "5000" and len(blob) == 160:
         blob = blob[16:]             # tpm2pcap does not include the param size
-
-    blob = bytes.fromhex(blob)
-    return blob
-
+        blob = bytes.fromhex(blob)
+        return blob
+    else:
+        print("Invalid blob file please check")
+        sys.exit()
 
 # ----------------------------------------------------------------------------#
 # Search the input file with a regex for the recovery key and parse it into   #
@@ -389,10 +400,11 @@ def get_recovery_key(filename):
 
 # --------------------------------------------------------------------------- #
 # Get the VMK from a file. It accepts either just the VMK key                 #
-# or data with header to the file (responseparams in wireshark)               #
-# TODO: add some checks incase someone adds entire TPM packet                 #
+# the VMK key with header or the responseparams Hex Stream from wireshark     #
+# which is the VMK key with header with an additional 2 byte length header    #
 # --------------------------------------------------------------------------- #
 def get_vmk(filename):
+    print("Reading VMK from file")
     filedata = open(filename, "r")
     blob = filedata.read()
     filedata.close()
@@ -409,8 +421,8 @@ def get_vmk(filename):
         print("Found a bare VMK without header, adding a placeholder header")
         blob = "2c0000000100000003200000" + blob
 
-    # if data is the bare VMK without header
-    if len(blob) == 88:
+    # if data is the bare VMK with header
+    if blob[:4].lower() == "2c00" and len(blob) == 88:
         blob = bytes.fromhex(blob)
         tpmkey = parse_key(blob)
         return tpmkey
@@ -459,9 +471,9 @@ def parse_key(datum):
     }
     key_type = {
         0x0000: "Unknown (Not encrypted/External Key)",
-        0x1000: "Stretch key",
+        0x1000: "Stretch key (AES-CCM 128-bit)",
         0x1001: "Unknown (Stretch key)",
-        0x2000: "TPM? (AES-CCM 256-bit)",
+        0x2000: "TPMandPIN intermediate (AES-CCM 256-bit)",
         0x2001: "Unknown (AES-CCM 256-bit)",
         0x2002: "External key (AES-CCM 256-bit)",
         0x2003: "VMK (AES-CCM 256-bit)",
@@ -661,7 +673,6 @@ if args.tpmblob is not None and args.pin is not None:
 if args.key is not None:
     if args.bek is not None:
         print("Decrypting FVEK using keys from TPM and StartupKey")
-        print("Sniffed TPM key")
         tpmkey = get_vmk(args.key)
         bekkey = get_BEK(args.bek)
         xorkey = xor_keys(tpmkey, bekkey)
@@ -675,7 +686,6 @@ if args.key is not None:
     else:
         print("Decrypting FVEK using VMK from TPM")
         # get the VMK and encrypted FVEK
-        print("Sniffed TPM key")
         VMK = get_vmk(args.key)
         print("VMK      : " + VMK.hex())
 
