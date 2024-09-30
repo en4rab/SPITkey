@@ -187,7 +187,7 @@ Now capture the spi data. The "Bitlocker Key Extractor" decoder should have logg
 or the blob to the terminal to let you know you were successful.
 
 To extract the key/blob or to export the data to a pcap the "TPI SPM" decoders output first
-needs to be exported a csv file.  
+needs to be exported to a csv file.  
 On the Analyzers tab with the data table selected click on the three dots to the right of the search box.  Click on export table and select all columns, all data, CSV format and then save the data as a CSV. This can then be converted to a pcap or the key/blob extracted using logic2pcap. 
 
 # Extracting the key from a trace
