@@ -36,6 +36,8 @@ In addition:
   -   The blob of data returned from the TPM by the unseal command
 - Recovery requires
   -   The recovery key
+- Password requires
+  -   The password (use the -p arg to supply the password)
 
 > [!NOTE]
 > Please note the sniffed data from the TPM is handled differently depending on the mode  
@@ -203,7 +205,8 @@ TPMandStartupKey needs the VMK, the BEK and the metadata
 TPMandPIN needs the blob, the pin and the metadata  
 TPMandPINandStartupKey needs the blob, the pin, the BEK and the metadata  
 StartupKey needs the BEK and the metadata  
-Recovery needs the recovery key and the metadata  
+Recovery needs the recovery key and the metadata
+Password needs the password and the metadata  
 This will then decrypt the FVEK and save it out to a file so you can use it with dislocker.
 If the drive is using TPM only you can skip this step and just use the VMK extracted from the CSV with dislocker.
 

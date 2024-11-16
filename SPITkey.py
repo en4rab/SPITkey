@@ -18,6 +18,8 @@
 #   The BEK file, The PIN and the blob of data from the TPM unseal command    #
 # Recovery requires:                                                          #
 #   The Recovery key file                                                     #
+# Password requires:                                                          #
+#   The password                                                              #
 #                                                                             #
 # Usage:                                                                      #
 # spitkey.py -l $LOG [-p $PIN -t $TPMblob] [-k $VMK] [-r $RECOVERY] [-b $BEK] #
@@ -84,9 +86,10 @@ def get_enc_payload(logfile, offset):
 # --------------------------------------------------------------------------- #
 def get_enc_key(logfile, key_type):
     alg_type = {
+        "Recovery": "0x1000",
+        "Password": "0x1001",
         "External": "0x2002",
-        "PIN": "0x2004",
-        "Recovery": "0x1000"
+        "PIN": "0x2004"
     }
     alg = alg_type[key_type]
     found = False
@@ -110,8 +113,8 @@ def get_enc_key(logfile, key_type):
 # --------------------------------------------------------------------------- #
 def get_rev_key(logfile, vmk_type):
     alg_type = {
-        "PIN": "0x2004",
-        "Recovery": "0x1000"
+        "Recovery": "0x1000",
+        "PIN": "0x2004"
     }
     alg = alg_type[vmk_type]
     found = False
@@ -226,13 +229,14 @@ def get_enc_fvek(logfile):
 
 
 # --------------------------------------------------------------------------- #
-# get the salt needed to stretch the PIN hash or the recovery hash from the   #
-# logfile salt_type should be "PIN" or "Recovery"                             #
+# get the salt needed to stretch the PIN, Password or recovery hash from the  #
+# logfile salt_type should be "PIN" "Password" or "Recovery"                  #
 # --------------------------------------------------------------------------- #
 def get_salt(logfile, salt_type):
     salt_alg = {
-        "PIN": "0x2004",
-        "Recovery": "0x1000"
+        "Recovery": "0x1000",
+        "Password": "0x1001",
+        "PIN": "0x2004"
     }
     alg = salt_alg[salt_type]
     found = False
@@ -272,7 +276,7 @@ def get_name(logfile):
 # The first step in PIN expansion is to change it to utf-16le with no BOM     #
 # then hash the PIN with sha256(sha256(pin)) to create the hash key           #
 # --------------------------------------------------------------------------- #
-def user_key(password):
+def hash_pin(password):
     prepared_pass = password.encode("utf-16le")
     user_hash = sha256(prepared_pass).digest()
     user_hash = sha256(user_hash).digest()
@@ -556,7 +560,7 @@ parser.add_argument(
     )
 parser.add_argument(
     "-p", "--pin",
-    help="the PIN used to decrypt the drive"
+    help="the PIN or Password used to decrypt the drive"
     )
 parser.add_argument(
     "-t", "--tpmblob",
@@ -588,7 +592,7 @@ else:
     logfile = dislocker_log.readlines()
     dislocker_log.close()
 
-if (args.tpmblob is None and args.key is None
+if (args.tpmblob is None and args.key is None and args.pin is None
         and args.recovery is None and args.bek is None):
     print("! No TPM data, VMK Recovery or BEK specified, cannot decrypt key !")
     parser.print_help()
@@ -626,7 +630,7 @@ if args.tpmblob is not None and args.pin is not None:
     print("PIN      : " + args.pin)
 
     # get hash key and stretched key
-    hash_key = user_key(args.pin)
+    hash_key = hash_pin(args.pin)
     stretched_key = stretch_key(hash_key, pin_salt)
     print("hashkey  : " + hash_key.hex())
     print("stretched: " + stretched_key.hex())
@@ -757,6 +761,7 @@ if args.recovery is not None:
 # -----------------------------------------------------------------------------
 # get FVEK using external key (StartupKey or ExternalKey)
 if args.bek is not None and args.key is None and args.pin is None:
+    print("Decrypting FVEK using external key")
     bekkey = get_BEK(args.bek)
     int_key = get_enc_key(logfile, "External")
     FVEK_enc = get_enc_fvek(logfile)
@@ -769,6 +774,44 @@ if args.bek is not None and args.key is None and args.pin is None:
     print("Decrypted VMK")
     int_key_dec = decrypt(int_key, bekkey)
     VMK = parse_key(int_key_dec)
+
+    # get the key from the decrypted VMK and decrypt the FVEK
+    FVEK_dec = decrypt(FVEK_enc, VMK)
+    print("Decrypted FVEK")
+    parse_key(FVEK_dec)
+
+    # save the FVEK to a file $computer_name.fvek
+    path = os.path.dirname(args.logfile)
+    path = os.path.join(path, computer_name)
+    save_key(FVEK_dec, path)
+
+    # get the reverse recovery key and decrypt with the VMK
+    save_recovery(logfile, VMK)
+
+    sys.exit()
+
+# -----------------------------------------------------------------------------
+# get FVEK using password (Password only)
+if args.pin is not None and args.key is None and args.tpmblob is None:
+    print("Decrypting FVEK using password")
+    pass_salt = get_salt(logfile, "Password")
+    VMK_enc = get_enc_key(logfile, "Password")
+    FVEK_enc = get_enc_fvek(logfile)
+
+    # get hash key and stretched key
+    hash_key = hash_pin(args.pin)
+    stretched_key = stretch_key(hash_key, pass_salt)
+    print("hashkey  : " + hash_key.hex())
+    print("stretched: " + stretched_key.hex())
+
+    # get the computer name for the saved FVEK filename
+    computer_name = get_name(logfile)
+    print("Computer : " + computer_name)
+    print("")
+
+    print("Decrypted VMK")
+    VMK_dec = decrypt(VMK_enc, stretched_key)
+    VMK = parse_key(VMK_dec)
 
     # get the key from the decrypted VMK and decrypt the FVEK
     FVEK_dec = decrypt(FVEK_enc, VMK)

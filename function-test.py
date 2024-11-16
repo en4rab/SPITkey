@@ -268,5 +268,36 @@ cleanup(fvek_file)
 
 result_list = result_list + "RECOVERY test " + result + "\n"
 
+# -----------------------------------------------------------------------------
+# Test  PASSWORD
+result = "passed"
+fvek_file = os.path.join("testdata", "password", "en4rab.fvek")
+recovery_file = os.path.join("testdata", "password", "92C7E8E2-CE52-4B7F-98A0-F48E218418BD.recovery")
+
+cleanup(fvek_file)
+cleanup(recovery_file)
+
+log = os.path.join("testdata", "password", "dislocker-password.log")
+password = "password"
+os.system("python SPITkey.py -l " + log + " -p " + password)
+
+recovery_key = "007942-637131-674355-218163-546744-283822-132561-640816"
+fvek = "0280a8e351093c96c478e6d343ced27d6f95000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+
+dec_fvek = get_fvek(fvek_file)
+if dec_fvek != fvek:
+    print("PASSWORD FVEK did not decrypt correctly")
+    result = "failed"
+
+dec_recovery = get_line(recovery_file)
+if dec_recovery != recovery_key:
+    print("USB-KEY Recovery key did not decrypt correctly")
+    result = "failed"
+
+cleanup(fvek_file)
+cleanup(recovery_file)
+
+result_list = result_list + "PASSWORD test " + result + "\n"
+
 print("\n\n")
 print(result_list)
