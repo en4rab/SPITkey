@@ -218,7 +218,3 @@ If your capture is from a PC using TPMandPIN and you have built an implant and s
 to get the blob when the owner logged in but don't know the PIN, well done!  
 You can use blob2john and the dislocker log to extract the hash needed to attempt
 to brute force the PIN with John the ripper, hashcat or bitcracker.
-
-# Additional info
-
-There is a blog post about SPITkey with some screenshots here [https://en4rab.github.io/posts/Sniffing-Bitlocker-Keys/](https://en4rab.github.io/posts/Sniffing-Bitlocker-Keys/)
