@@ -1,0 +1,425 @@
+Fri Dec 20 12:40:31 2024 [DEBUG] Verbosity level to DEBUG (4) into 'stdout'
+Fri Dec 20 12:40:31 2024 [INFO] dislocker by Romain Coltel, v0.7.2 (compiled for Linux/x86_64)
+Fri Dec 20 12:40:31 2024 [DEBUG] --- Config...
+Fri Dec 20 12:40:31 2024 [DEBUG]    Verbosity: 4
+Fri Dec 20 12:40:31 2024 [DEBUG]    Trying to decrypt '/dev/nvme0n1p3'
+Fri Dec 20 12:40:31 2024 [DEBUG]    	using a clear key on the volume
+Fri Dec 20 12:40:31 2024 [DEBUG]    Using the first valid metadata block
+Fri Dec 20 12:40:31 2024 [DEBUG] ... End config ---
+Fri Dec 20 12:40:31 2024 [DEBUG] Trying to open '/dev/nvme0n1p3'...
+Fri Dec 20 12:40:31 2024 [DEBUG] Trying to open '/dev/nvme0n1p3'...
+Fri Dec 20 12:40:31 2024 [DEBUG] Opened (fd #3).
+Fri Dec 20 12:40:31 2024 [DEBUG] Opened (fd #3).
+Fri Dec 20 12:40:31 2024 [DEBUG] New memory allocation at 0x5b7973809850 (0x18 bytes allocated)
+Fri Dec 20 12:40:31 2024 [DEBUG] New memory allocation at 0x5b7973809870 (0x90 bytes allocated)
+Fri Dec 20 12:40:31 2024 [DEBUG] New memory allocation at 0x5b7973809910 (0x200 bytes allocated)
+Fri Dec 20 12:40:31 2024 [DEBUG] Positioning #3 at offset 0 from 0
+Fri Dec 20 12:40:31 2024 [DEBUG] Reading volume header...
+Fri Dec 20 12:40:31 2024 [DEBUG] Reading 0x200 bytes from #3 into 0x5b7973809910
+Fri Dec 20 12:40:31 2024 [DEBUG] Volume header read
+Fri Dec 20 12:40:31 2024 [DEBUG] =====[ Volume header information ]=====
+Fri Dec 20 12:40:31 2024 [DEBUG]   Signature: '-FVE-FS-'
+Fri Dec 20 12:40:31 2024 [DEBUG]   Sector size: 0x0200 (512) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG]   Sector per cluster: 0x08 (8) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG]   Reserved clusters: 0x0000 (0) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG]   Fat count: 0x00 (0) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG]   Root entries: 0x0000 (0) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG]   Number of sectors (16 bits): 0x0000 (0) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG]   Media descriptor: 0xf8 (248) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG]   Sectors per fat: 0x0000 (0) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG]   Hidden sectors: 0x0003a800 (239616) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG]   Number of sectors (32 bits): 0x00000000 (0) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG]   Number of sectors (64 bits): 0x0000000000000000 (0) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG]   MFT start cluster: 0x0000000000060001 (393217) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG]   Metadata Lcn: 0x0000000000000000 (0) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG]   Volume GUID: '4967D63B-2E29-4AD8-8399-F6A339E3D001'
+Fri Dec 20 12:40:31 2024 [DEBUG]   First metadata header offset:  0x0000000005b00000
+Fri Dec 20 12:40:31 2024 [DEBUG]   Second metadata header offset: 0x000000007224f000
+Fri Dec 20 12:40:31 2024 [DEBUG]   Third metadata header offset:  0x000000008c338000
+Fri Dec 20 12:40:31 2024 [DEBUG]   Boot Partition Identifier: '0xaa55'
+Fri Dec 20 12:40:31 2024 [DEBUG] ========================================
+Fri Dec 20 12:40:31 2024 [INFO] Volume GUID (INFORMATION OFFSET) supported
+Fri Dec 20 12:40:31 2024 [DEBUG] Entering get_metadata_lazy_checked
+Fri Dec 20 12:40:31 2024 [DEBUG] Positioning #3 at offset 95420416 from 0
+Fri Dec 20 12:40:31 2024 [DEBUG] Reading bitlocker header at 0x5b00000...
+Fri Dec 20 12:40:31 2024 [DEBUG] Reading 0x70 bytes from #3 into 0x7ffc5f030db0
+Fri Dec 20 12:40:31 2024 [DEBUG] New memory allocation at 0x5b7973809b20 (0x5a0 bytes allocated)
+Fri Dec 20 12:40:31 2024 [DEBUG] Reading data...
+Fri Dec 20 12:40:31 2024 [DEBUG] Reading 0x530 bytes from #3 into 0x5b7973809b90
+Fri Dec 20 12:40:31 2024 [DEBUG] End get_metadata.
+Fri Dec 20 12:40:31 2024 [DEBUG] Reading validations data at offset 0x5b005a0.
+Fri Dec 20 12:40:31 2024 [DEBUG] Positioning #3 at offset 95421856 from 0
+Fri Dec 20 12:40:31 2024 [DEBUG] Reading 0x8 bytes from #3 into 0x7ffc5f030e98
+Fri Dec 20 12:40:31 2024 [DEBUG] Looking if 0x6cb2ee14 == 0x6cb2ee14 for metadata validation
+Fri Dec 20 12:40:31 2024 [DEBUG] We have a winner (n°1)!
+Fri Dec 20 12:40:31 2024 [INFO] BitLocker metadata found and parsed.
+Fri Dec 20 12:40:31 2024 [DEBUG] =====================[ BitLocker information structure ]=====================
+Fri Dec 20 12:40:31 2024 [DEBUG]   Signature: '-FVE-FS-'
+Fri Dec 20 12:40:31 2024 [DEBUG]   Total Size: 0x05a0 (1440) bytes (including signature and data)
+Fri Dec 20 12:40:31 2024 [DEBUG]   Version: 2
+Fri Dec 20 12:40:31 2024 [DEBUG]   Current state: ENCRYPTED (4)
+Fri Dec 20 12:40:31 2024 [DEBUG]   Next state: ENCRYPTED (4)
+Fri Dec 20 12:40:31 2024 [DEBUG]   Encrypted volume size: 499268976640 bytes (0x743ec00000), ~476140 MB
+Fri Dec 20 12:40:31 2024 [DEBUG]   Size of conversion region: 0 (0)
+Fri Dec 20 12:40:31 2024 [DEBUG]   Number of boot sectors backuped: 16 sectors (0x10)
+Fri Dec 20 12:40:31 2024 [DEBUG]   First metadata header offset:  0x5b00000
+Fri Dec 20 12:40:31 2024 [DEBUG]   Second metadata header offset: 0x7224f000
+Fri Dec 20 12:40:31 2024 [DEBUG]   Third metadata header offset:  0x8c338000
+Fri Dec 20 12:40:31 2024 [DEBUG]   Boot sectors backup address:   0x5b10000
+Fri Dec 20 12:40:31 2024 [DEBUG] New memory allocation at 0x5b797380a0d0 (0xc bytes allocated)
+Fri Dec 20 12:40:31 2024 [DEBUG]   ----------------------------{ Dataset header }----------------------------
+Fri Dec 20 12:40:31 2024 [DEBUG]     Dataset size: 0x00000552 (1362) bytes (including data)
+Fri Dec 20 12:40:31 2024 [DEBUG]     Unknown data: 0x00000001 (always 0x00000001)
+Fri Dec 20 12:40:31 2024 [DEBUG]     Dataset header size: 0x00000030 (always 0x00000030)
+Fri Dec 20 12:40:31 2024 [DEBUG]     Dataset copy size: 0x00000552 (1362) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG]     Dataset GUID: '9DE8D9F4-D076-4871-B034-89E9405CCE5F'
+Fri Dec 20 12:40:31 2024 [DEBUG]     Next counter: 57
+Fri Dec 20 12:40:31 2024 [DEBUG]     Encryption Type: AES-XTS-128 (0x8004)
+Fri Dec 20 12:40:31 2024 [DEBUG]     Epoch Timestamp: 1727694682 sec, that to say Mon Sep 30 11:11:22 2024
+Fri Dec 20 12:40:31 2024 [DEBUG]   --------------------------------------------------------------------------
+Fri Dec 20 12:40:31 2024 [DEBUG] Freeing pointer at address 0x5b797380a0d0
+Fri Dec 20 12:40:31 2024 [DEBUG] =============================================================================
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x44, 0x7, 0x2, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] 
+Fri Dec 20 12:40:31 2024 [DEBUG] =======[ Datum n°1 information ]=======
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x0044 (68) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 7
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE UNKNOWN
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 2
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> UNICODE -- Total size header: 8 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] New memory allocation at 0x5b797380a0f0 (0x78 bytes allocated)
+Fri Dec 20 12:40:31 2024 [DEBUG] UTF-16 string: 'DESKTOP-IULKD89 C: 30/09/2024'
+Fri Dec 20 12:40:31 2024 [DEBUG] Freeing pointer at address 0x5b797380a0f0
+Fri Dec 20 12:40:31 2024 [DEBUG] =========================================
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x50, 0x3, 0x5, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] 
+Fri Dec 20 12:40:31 2024 [DEBUG] =======[ Datum n°2 information ]=======
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x0050 (80) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 3
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE FVEK (FveDatasetVmkGetFvek)
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 5
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Nonce: 
+Fri Dec 20 12:40:31 2024 [DEBUG] 10 66 4d 40 2a 13 db 01 09 00 00 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] MAC: 
+Fri Dec 20 12:40:31 2024 [DEBUG] 9f a4 55 a4 52 d5 8d 4b 83 4d e1 21 f3 84 61 b7 
+Fri Dec 20 12:40:31 2024 [DEBUG] Payload:
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 2e 83 41 aa fc 64 36 b7-2f 49 8d a9 fb a0 13 16 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000010 52 6a 35 29 d4 a0 fd 24-07 c3 39 43 d3 bc 0d 09 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000020 2e 01 3c 53 7b c1 45 f1-e7 fe 55 dd 
+Fri Dec 20 12:40:31 2024 [DEBUG] =========================================
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x50, 0xb, 0x5, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] 
+Fri Dec 20 12:40:31 2024 [DEBUG] =======[ Datum n°3 information ]=======
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x0050 (80) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 11
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE FVEK (TryObtainKey)
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 5
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Nonce: 
+Fri Dec 20 12:40:31 2024 [DEBUG] 10 66 4d 40 2a 13 db 01 0a 00 00 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] MAC: 
+Fri Dec 20 12:40:31 2024 [DEBUG] 96 ac 90 75 51 50 3e 5d 32 2c bd 20 a8 c8 b6 a7 
+Fri Dec 20 12:40:31 2024 [DEBUG] Payload:
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 bf 00 6d 0b c4 ec 99 09-57 60 b1 9a 76 3e ef 1f 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000010 8d 05 a4 d4 62 8d b7 42-85 79 56 7b 2c c8 37 8b 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000020 03 ef 42 40 cb aa 37 d9-7d e9 84 d7 
+Fri Dec 20 12:40:31 2024 [DEBUG] =========================================
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x13c, 0x2, 0x8, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] 
+Fri Dec 20 12:40:31 2024 [DEBUG] =======[ Datum n°4 information ]=======
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x013c (316) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 2
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE VMK
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 8
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> VMK -- Total size header: 36 -- Nested datum: yes
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Recovery Key GUID: '054D509F-4821-4E93-915C-F8B2D2B06858'
+Fri Dec 20 12:40:31 2024 [DEBUG] Nonce: 
+Fri Dec 20 12:40:31 2024 [DEBUG] b0 86 be 45 2a 13 db 01 00 00 00 08 
+Fri Dec 20 12:40:31 2024 [DEBUG]    ------ Nested datum(s) ------
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x00ac (172) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 0
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 3
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> STRETCH KEY -- Total size header: 28 -- Nested datum: yes
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Unknown: 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 00 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] Algo: 0x1000
+Fri Dec 20 12:40:31 2024 [DEBUG] Salt: 
+Fri Dec 20 12:40:31 2024 [DEBUG] 88 48 66 35 87 aa c0 08 ad 6b c3 59 e1 9b 43 90 
+Fri Dec 20 12:40:31 2024 [DEBUG]    ------ Nested datum ------
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x0040 (64) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 18
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 5
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Nonce: 
+Fri Dec 20 12:40:31 2024 [DEBUG] 10 66 4d 40 2a 13 db 01 0b 00 00 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] MAC: 
+Fri Dec 20 12:40:31 2024 [DEBUG] fd f0 93 51 c6 da 33 bd 3b 75 1b 31 ae d7 95 82 
+Fri Dec 20 12:40:31 2024 [DEBUG] Payload:
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 ab 5e fa 6c 5f 4e 07 77-df 25 82 04 63 59 69 8f 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000010 9f 0e a8 6c 05 71 14 62-b3 b1 8d b6 
+Fri Dec 20 12:40:31 2024 [DEBUG]    ---------------------------
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0xac, 0, 0x3, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x0050 (80) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 0
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 5
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Nonce: 
+Fri Dec 20 12:40:31 2024 [DEBUG] 10 66 4d 40 2a 13 db 01 0d 00 00 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] MAC: 
+Fri Dec 20 12:40:31 2024 [DEBUG] da ed 3f 9e 68 df 23 ab 93 be bf ff 20 23 2d 4d 
+Fri Dec 20 12:40:31 2024 [DEBUG] Payload:
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 31 1a 33 0d 6f a3 22 58-1f 95 98 36 8d 7e dd 6c 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000010 d4 3d 7c b6 22 2b 4d 80-17 cc 72 ab 48 14 d2 8c 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000020 1e 5f 51 7c b2 15 ea 84-77 ec 0b 3c 
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x50, 0, 0x5, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x001c (28) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 0
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 21
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ERROR -- Total size header: 1676 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Generic datum:
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 30 68 f4 49 2a 13 db 01-30 68 f4 49 2a 13 db 01 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000010 08 00 02 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x1c, 0, 0x15, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG]    ------------------------------
+Fri Dec 20 12:40:31 2024 [DEBUG] =========================================
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x266, 0x2, 0x8, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] 
+Fri Dec 20 12:40:31 2024 [DEBUG] =======[ Datum n°5 information ]=======
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x0266 (614) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 2
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE VMK
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 8
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> VMK -- Total size header: 36 -- Nested datum: yes
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Recovery Key GUID: 'EF69251D-4CBA-4604-A053-838C7D91C7D5'
+Fri Dec 20 12:40:31 2024 [DEBUG] Nonce: 
+Fri Dec 20 12:40:31 2024 [DEBUG] c0 42 31 d9 2a 13 db 01 00 00 00 05 
+Fri Dec 20 12:40:31 2024 [DEBUG]    ------ Nested datum(s) ------
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x006c (108) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 0
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 3
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> STRETCH KEY -- Total size header: 28 -- Nested datum: yes
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Unknown: 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 10 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] Algo: 0x2004
+Fri Dec 20 12:40:31 2024 [DEBUG] Salt: 
+Fri Dec 20 12:40:31 2024 [DEBUG] 89 9c 5e a2 e3 9b 1a 24 2f 7c 79 95 b5 c1 08 66 
+Fri Dec 20 12:40:31 2024 [DEBUG]    ------ Nested datum ------
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x0050 (80) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 0
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 5
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Nonce: 
+Fri Dec 20 12:40:31 2024 [DEBUG] 60 33 a0 c2 c0 4d db 01 35 00 00 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] MAC: 
+Fri Dec 20 12:40:31 2024 [DEBUG] f0 90 e2 df 6b 57 3e b6 b6 d2 33 1f 18 0b 5b 56 
+Fri Dec 20 12:40:31 2024 [DEBUG] Payload:
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 9b a5 8d 9e 86 fe 37 4b-d7 08 d6 d0 d9 52 1a 2a 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000010 ad b2 b9 5e d3 38 23 60-cd 44 2a a8 3d 38 60 ac 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000020 17 fc d8 fb 26 ac 4b 29-3c 0f 39 c2 
+Fri Dec 20 12:40:31 2024 [DEBUG]    ---------------------------
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x6c, 0, 0x3, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x000c (12) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 0
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 16
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> SIMPLE 1 -- Total size header: 12 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Generic datum:
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 00 00 00 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0xc, 0, 0x10, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x001c (28) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 0
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 18
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> CONCAT HASH KEY -- Total size header: 28 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Generic datum:
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 42 69 74 4c 6f 63 6b 65-72 41 75 74 68 44 61 74 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000010 61 00 00 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x1c, 0, 0x12, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x0146 (326) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 0
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 6
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> TPM_ENCODED -- Total size header: 12 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Unknown: 0x880
+Fri Dec 20 12:40:31 2024 [DEBUG] Payload:
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 00 c2 00 20 e7 5b 60 ee-22 94 97 04 a3 e8 18 e3 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000010 e3 83 22 74 15 40 70 24-e0 59 55 b9 75 e2 c2 85 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000020 81 7d 2a 6f 00 10 52 9c-fc c3 41 a5 8d b5 33 7b 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000030 22 ea 1c 88 11 06 e2 f7-d7 84 1d 78 f6 fe 8e 86 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000040 5c 67 91 b7 90 c6 ca 3c-e4 05 a9 eb 6c 40 d2 a9 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000050 f5 52 4a 45 b2 e5 90 2a-67 bc 2c d5 80 2b 11 a3 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000060 7e d7 d7 18 5b d6 48 b8-ec 7f 04 17 43 ef 5d 0a 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000070 3f 40 60 ae de c4 59 80-36 ab 48 81 42 4c 0a 12 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000080 8c 6f bd 1e f5 ea 6c 42-6c 9e 10 77 90 40 5a e1 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000090 82 8e a9 9d e4 4f 02 8f-d7 e1 bc 61 18 ff 78 ae 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x000000a0 1a e4 46 cf 32 b2 d8 67-52 5a ca 7d d6 eb cc 1f 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x000000b0 9f 71 1d 29 31 4b 67 2e-33 d6 0f 83 83 66 eb 23 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x000000c0 e8 2a a5 d7 00 4e 00 08-00 0b 00 00 00 12 00 20 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x000000d0 d5 38 86 84 de ee 4b c9-8b c0 45 d1 df b6 83 fd 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x000000e0 54 51 bc 03 26 10 15 60-d2 38 09 f1 4b c1 63 02 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x000000f0 00 10 00 20 46 24 0d 9d-d1 a6 9a d0 8a 45 5d c6 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000100 d8 ae b0 6c b6 dc 57 b7-ca a0 3a 57 e7 cd 05 a0 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000110 1e fb e5 42 00 20 2e d6-00 a2 12 ca 19 86 3a 25 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000120 57 aa df 75 94 23 80 74-b6 c5 84 b3 18 e3 dd b2 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000130 88 70 13 7e fe 4a 03 80-08 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x146, 0, 0x6, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x000c (12) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 0
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 17
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> SIMPLE 2 -- Total size header: 12 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Generic datum:
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 00 00 00 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0xc, 0, 0x11, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x000c (12) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 0
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 19
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> SIMPLE 3 -- Total size header: 12 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Generic datum:
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 00 00 00 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0xc, 0, 0x13, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x0050 (80) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 0
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE UNKNOWN 1
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 5
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> AES-CCM -- Total size header: 36 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Nonce: 
+Fri Dec 20 12:40:31 2024 [DEBUG] 60 33 a0 c2 c0 4d db 01 37 00 00 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] MAC: 
+Fri Dec 20 12:40:31 2024 [DEBUG] b8 57 0e 20 65 6a e8 50 74 e0 36 76 11 b3 39 b7 
+Fri Dec 20 12:40:31 2024 [DEBUG] Payload:
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 d6 5a a0 91 06 00 87 5c-c9 1d ee 26 80 07 b9 68 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000010 6b 8a f6 5f bc de d7 92-c4 ed b4 27 fd 22 35 13 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000020 e5 76 0b b1 8c 0d ae 67-25 ff 92 6e 
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x50, 0, 0x5, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fri Dec 20 12:40:31 2024 [DEBUG]    ------------------------------
+Fri Dec 20 12:40:31 2024 [DEBUG] =========================================
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x8, 0x4, 0x7, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] 
+Fri Dec 20 12:40:31 2024 [DEBUG] =======[ Datum n°6 information ]=======
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x0008 (8) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 4
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> ENTRY TYPE UNKNOWN
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 7
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> VALIDATION -- Total size header: 8 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Generic datum:
+Fri Dec 20 12:40:31 2024 [DEBUG] =========================================
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x30, 0x11, 0x7, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] 
+Fri Dec 20 12:40:31 2024 [DEBUG] =======[ Datum n°7 information ]=======
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x0030 (48) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 17
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 7
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> VALIDATION -- Total size header: 8 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Generic datum:
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 03 00 00 00 b0 01 00 00-93 c0 a0 58 f7 40 65 12 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000010 58 93 fa 4f af d9 52 a5-57 f6 98 2d 0d e0 24 d1 
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000020 9a 48 e9 b4 f2 39 65 01 
+Fri Dec 20 12:40:31 2024 [DEBUG] =========================================
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x64, 0xf, 0xf, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] 
+Fri Dec 20 12:40:31 2024 [DEBUG] =======[ Datum n°8 information ]=======
+Fri Dec 20 12:40:31 2024 [DEBUG] Total datum size: 0x0064 (100) bytes
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum entry type: 15
+Fri Dec 20 12:40:31 2024 [DEBUG] Datum value type: 15
+Fri Dec 20 12:40:31 2024 [DEBUG]    `--> VIRTUALIZATION INFO -- Total size header: 24 -- Nested datum: no
+Fri Dec 20 12:40:31 2024 [DEBUG] Status: 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] NTFS boot sectors address:  0x5b10000
+Fri Dec 20 12:40:31 2024 [DEBUG] Number of backuped bytes: 0x2000 (8192)
+Fri Dec 20 12:40:31 2024 [DEBUG] Unknown:
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 05 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] Size: 0x004c (76)
+Fri Dec 20 12:40:31 2024 [DEBUG] Unknown:
+Fri Dec 20 12:40:31 2024 [DEBUG] 0x00000000 00 00 00 00 
+Fri Dec 20 12:40:31 2024 [DEBUG] Flags: 0x11007 (69639)
+Fri Dec 20 12:40:31 2024 [DEBUG] Convert Log offset: 0x0000000000000000
+Fri Dec 20 12:40:31 2024 [DEBUG] Convert Log size:   0x00000000 (0)
+Fri Dec 20 12:40:31 2024 [DEBUG] Sector size (1): 0x200 (512)
+Fri Dec 20 12:40:31 2024 [DEBUG] Sector size (2): 0x1000 (4096)
+Fri Dec 20 12:40:31 2024 [DEBUG] =========================================
+Fri Dec 20 12:40:31 2024 [DEBUG] Metadata files size: 0x10000
+Fri Dec 20 12:40:31 2024 [DEBUG] Entering get_next_datum...
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x44, 0x7, 0x2, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x50, 0x3, 0x5, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x50, 0xb, 0x5, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x13c, 0x2, 0x8, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x266, 0x2, 0x8, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x8, 0x4, 0x7, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x30, 0x11, 0x7, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x64, 0xf, 0xf, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Going out of get_next_datum
+Fri Dec 20 12:40:31 2024 [DEBUG] Virtualized info size: 0x2000
+Fri Dec 20 12:40:31 2024 [DEBUG] Got extended info
+Fri Dec 20 12:40:31 2024 [DEBUG] New memory allocation at 0x5b797380a0d0 (0x4 bytes allocated)
+Fri Dec 20 12:40:31 2024 [DEBUG] Entering has_clear_key. Returning result of get_vmk_datum_from_range with range between 0x00 and 0xff
+Fri Dec 20 12:40:31 2024 [DEBUG] Entering get_next_datum...
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x44, 0x7, 0x2, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x50, 0x3, 0x5, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x50, 0xb, 0x5, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x13c, 0x2, 0x8, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Going out of get_next_datum
+Fri Dec 20 12:40:31 2024 [DEBUG] Entering get_next_datum...
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x266, 0x2, 0x8, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Going out of get_next_datum
+Fri Dec 20 12:40:31 2024 [DEBUG] Entering get_next_datum...
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x8, 0x4, 0x7, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x30, 0x11, 0x7, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Header safe: 0x64, 0xf, 0xf, 0x1
+Fri Dec 20 12:40:31 2024 [DEBUG] Hit limit, search failed.
+Fri Dec 20 12:40:31 2024 [DEBUG] Going out of get_next_datum
+Fri Dec 20 12:40:31 2024 [ERROR] No clear key found. Use a different method.
+Fri Dec 20 12:40:31 2024 [DEBUG] Freeing pointer at address 0x5b797380a0d0
+Fri Dec 20 12:40:31 2024 [CRITICAL] None of the provided decryption mean is decrypting the keys. Abort.
+Fri Dec 20 12:40:31 2024 [CRITICAL] Unable to grab VMK or FVEK. Abort.
+Fri Dec 20 12:40:31 2024 [DEBUG] Freeing pointer at address 0x5b7973809910
+Fri Dec 20 12:40:31 2024 [DEBUG] Freeing pointer at address 0x5b7973809b20
+Fri Dec 20 12:40:31 2024 [DEBUG] Freeing pointer at address 0x5b7973809850
+Fri Dec 20 12:40:31 2024 [DEBUG] Freeing pointer at address 0x5b7973809870
+Fri Dec 20 12:40:31 2024 [DEBUG] Freeing pointer at address 0x5b79738045c0
+Fri Dec 20 12:40:31 2024 [DEBUG] Trying to close fd #3...
