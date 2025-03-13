@@ -39,6 +39,8 @@ In addition:
 - Password requires
   -   The password (use the -p arg to supply the password)
 
+If you provide no other option than the logfile, it is expected to contain the VMK in clear, meaning it has been generated with a disk where protection was temporary disabled, and dislocker could find a clear key.  
+
 > [!NOTE]
 > Please note the sniffed data from the TPM is handled differently depending on the mode  
 > If bitlocker is in TPM or TPMandKEY the data you sniff is a key and use -k $key  

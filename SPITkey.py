@@ -146,6 +146,46 @@ def get_rec_GUID(logfile):
             # got the correct recovery key GUID
             return rec_GUID
 
+# --------------------------------------------------------------------------- #
+# Search through the dislocker logfile to find the clear VMK  (dislocker -c)  #
+#                                                                             #
+# --------------------------------------------------------------------------- #
+def get_vmk_from_log(logfile):
+    vmk=''
+    length = len(logfile)
+    x=0
+    found = False
+    while x < length and not found:
+        line = logfile[x].strip("\n")
+        if r"==========================[ VMK ]=========================" in line:
+            found = True
+        x +=1
+    if not found:
+        return None
+    
+    # Key dump should be within the next 20 lines
+    boundary=max(x+20, length)
+    found=False
+
+    while x < boundary and not found:
+        line = logfile[x].strip("\n")
+        if "Key:" in line:
+            for o in (1,2):
+                temp = logfile[x+o].strip("\n").split(r"[DEBUG] ")[1]
+                print(f"temp: {temp}")
+                if temp[:2] == "0x":    # dislocker puts a - after the 8th byte
+                    temp = temp[11:].replace("-", " ")
+                    vmk += temp
+                else:
+                    break
+            found = True
+        x +=1
+    if not found:
+        return None
+    
+    if args.verbose is True:
+        print("Found VMK in log")
+    return bytes.fromhex(vmk)
 
 # --------------------------------------------------------------------------- #
 # encode the recovery key as the numeric checksummed recovery key             #
@@ -592,11 +632,13 @@ else:
     logfile = dislocker_log.readlines()
     dislocker_log.close()
 
+args.vmk_clear = None
+
 if (args.tpmblob is None and args.key is None and args.pin is None
         and args.recovery is None and args.bek is None):
-    print("! No TPM data, VMK Recovery or BEK specified, cannot decrypt key !")
-    parser.print_help()
-    sys.exit()
+    print("No TPM data, VMK Recovery or BEK specified, expecting VMK in clear in the log")
+    args.vmk_clear = True
+
 if args.tpmblob is not None and args.key is not None:
     print("!! Please specify either key or blob !!")
     parser.print_help()
@@ -673,8 +715,8 @@ if args.tpmblob is not None and args.pin is not None:
     sys.exit()
 
 # -----------------------------------------------------------------------------
-# get FVEK using VMK + log [+ BEK] (TPM or TPMandKey)
-if args.key is not None:
+# get FVEK using VMK + log [+ BEK] (TPM or TPMandKey or clear VMK)
+if args.key is not None or args.vmk_clear is not None:
     if args.bek is not None:
         print("Decrypting FVEK using keys from TPM and StartupKey")
         tpmkey = get_vmk(args.key)
@@ -688,9 +730,16 @@ if args.key is not None:
         int_key_dec = decrypt(int_key, xorkey)
         VMK = parse_key(int_key_dec)
     else:
-        print("Decrypting FVEK using VMK from TPM")
-        # get the VMK and encrypted FVEK
-        VMK = get_vmk(args.key)
+        if args.vmk_clear is not None:
+            print("Getting VMK from log (expecting log from dislocker -c)")
+            VMK = get_vmk_from_log(logfile)
+            if VMK is None:
+                print("! Unable to extract clear VMK from log")
+                sys.exit()
+        else:
+            print("Decrypting FVEK using VMK from TPM")
+            # get the VMK and encrypted FVEK
+            VMK = get_vmk(args.key)
         print("VMK      : " + VMK.hex())
 
     FVEK_enc = get_enc_fvek(logfile)
@@ -708,7 +757,11 @@ if args.key is not None:
     parse_key(FVEK_dec)
 
     # save the FVEK to a file $computer_name.fvek
-    path = os.path.dirname(args.key)
+    if args.key is not None:
+        path = os.path.dirname(args.key)
+    else:
+        path=os.path.dirname(args.logfile)
+
     path = os.path.join(path, computer_name)
     save_key(FVEK_dec, path)
 
