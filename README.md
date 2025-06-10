@@ -59,7 +59,7 @@ Convert exported csv data from libsigrokdecoder_spi-tpm.
 
 **Usage: dslogic2pcap.py input_file -p (write pcap) -k (write keys)**
 
-Convert exported csv data from DSView's SPI TMP protocol decoder.
+Convert exported csv data from DSView's SPI TPM protocol decoder.
 
 - -p will output a text file suitable for use with wiresharks text2pcap.exe If this is present it will be called to convert the file automatically.
 - -k will extract the VMK or Blob and save it.
