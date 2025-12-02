@@ -231,6 +231,10 @@ to get the blob when the owner logged in but don't know the PIN, well done!
 You can use blob2john and the dislocker log to extract the hash needed to attempt
 to brute force the PIN with John the ripper, hashcat or bitcracker.
 
+# SPITkey_GUI
+
+An Alpha version of a GUI tool is now available in the SPITkeyGUI it requires PyQt6 and while the code is messy it should be functional. If you encounter errors you should probably check against the original SPITkey to make sure its isn't a bug with the GUI
+
 # Additional info
 
 There is a blog post about SPITkey with some screenshots here [https://en4rab.github.io/posts/Sniffing-Bitlocker-Keys/](https://en4rab.github.io/posts/Sniffing-Bitlocker-Keys/)
