@@ -897,6 +897,45 @@ def decrypt_orchestrator(args):
                 print("Error decrypting FVEK")
                 return (False)
 
+
+        # get FVEK using clear key
+        elif mode == "Clear key":
+            print("Decrypting FVEK using Clear key")
+            # get the computer name for the saved FVEK filename
+            computer_name = get_name(logfile)
+            print("Computer : " + computer_name)
+            print("Getting VMK from log (expecting log from dislocker -c)")
+            VMK = get_vmk_from_log(logfile)
+            if VMK is None:
+                print("Failed to read clear VMK.")
+                return (False)
+            FVEK_enc = get_enc_fvek(logfile)
+
+            print("VMK_enc  : " + VMK.hex())
+            print("FVEK_enc : " + FVEK_enc.hex())
+
+            # decrypt the encrypted FVEK with the VMK
+            FVEK_dec = decrypt(FVEK_enc, VMK)
+            print("\nDecrypted FVEK")
+            FVEK_bytes = parse_key(FVEK_dec)
+
+            # save the FVEK to a file $computer_name.fvek
+            FVEK_output = save_key(FVEK_bytes, computer_name, args['output_dir'])
+
+            # get the reverse recovery key and decrypt with the VMK
+            recovery_output = save_recovery(logfile, VMK, args['output_dir'])
+
+            if FVEK_output is not None and recovery_output is not None:
+                print("\n*** SUCCESS ***\n")
+                print(f"Clear VMK: {VMK.hex()}\n")
+                print(f"Decrypted FVEK: {FVEK_bytes.hex()}")
+                print(f"FVEK saved to: {FVEK_output}")
+                print(f"Recovery key saved to: {recovery_output}")
+                return (True)
+            else:
+                print("Error decrypting FVEK")
+                return (False)
+
         else:
             return (False, f"Unsupported mode: {mode}")
 
@@ -1001,7 +1040,8 @@ class SPITkeyGUI(QWidget):
             "BEK Only",
             "Recovery Key",
             "TPM and KEY (BEK)",
-            "TPM and PIN and KEY (BEK)"
+            "TPM and PIN and KEY (BEK)",
+            "Clear key"
         ])
         self.mode_selector.currentIndexChanged.connect(self.update_optional_inputs)
         input_layout.addWidget(self.mode_selector)
@@ -1151,6 +1191,7 @@ class SPITkeyGUI(QWidget):
         # To use this, place an audio file in the same directory
         # Uncomment and modify the path below:
         self.player.setSource(QUrl.fromLocalFile("zeroplex.mp3"))
+        self.player.setLoops(-1)
         self.audio_output.setVolume(0.5)
         self.player.play()
 
@@ -1294,8 +1335,8 @@ class SPITkeyGUI(QWidget):
                 QMessageBox.critical(self, "Failure", "Decryption failed. Please check inputs and log data.")
 
         except Exception as e:
-            error_msg = f"An unhandled error occurred during decryption: {type(e).__name__}: {e}"
-            self.output_text.append(error_msg)
+            print(f"An unhandled error occurred during decryption: {type(e).__name__}: {e}")
+            print(traceback.format_exc())
             QMessageBox.critical(self, "Critical Error", error_msg)
 
 
@@ -1424,26 +1465,13 @@ class AnimatedTextEdit(QTextEdit):
             # Rotate around Y axis
             x1 = x * math.cos(angle_y) - z * math.sin(angle_y)
             z1 = x * math.sin(angle_y) + z * math.cos(angle_y)
-
             # Rotate around X axis
             y1 = y * math.cos(angle_x) - z1 * math.sin(angle_x)
             z2 = y * math.sin(angle_x) + z1 * math.cos(angle_x)
-
             rotated.append((x1, y1, z2))
 
-        # Draw key with depth
-        gradient_colors = [
-            QColor(255, 215, 0, 255),  # Gold with no transparency
-            QColor(255, 193, 37, 255),
-            QColor(218, 165, 32, 255)
-        ]
-
-        # Sort by depth for simple painter's algorithm
-        avg_z = sum(z for x, y, z in rotated) / len(rotated)
-        color_idx = int((avg_z + 50) / 100 * 2) % 3
-
         painter.setPen(QPen(QColor(200, 150, 0, 128), 2))
-        painter.setBrush(QBrush(gradient_colors[color_idx]))
+        painter.setBrush(QBrush(QColor(255, 215, 0, 255))) # Gold with no transparency
 
         # Draw key head circle
         path = QPainterPath()
