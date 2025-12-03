@@ -514,7 +514,8 @@ def parse_key(datum):
         0x8005: "AES-XTS 256-bit"
     }
     key_type = {
-        0x0000: "Unknown (Not encrypted/External Key)",
+        0x0000: "None (Not encrypted)",
+        0x0005: "External (External Key)",
         0x1000: "Stretch key (AES-CCM 128-bit)",
         0x1001: "Unknown (Stretch key)",
         0x2000: "TPMandPIN intermediate (AES-CCM 256-bit)",

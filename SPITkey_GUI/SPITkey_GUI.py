@@ -24,6 +24,7 @@ from PyQt6.QtGui import QPainter, QColor, QPen, QFont, QBrush, QPainterPath
 from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PyQt6.QtCore import QUrl
 
+
 def get_logfile_content(logfile_path):
     """Reads the dislocker log file content."""
     try:
@@ -519,7 +520,8 @@ def parse_key(datum):
         0x8005: "AES-XTS 256-bit"
     }
     key_type = {
-        0x0000: "Unknown (Not encrypted/External Key)",
+        0x0000: "None (Not encrypted)",
+        0x0005: "External (External Key)",
         0x1000: "Stretch key (AES-CCM 128-bit)",
         0x1001: "Unknown (Stretch key)",
         0x2000: "TPMandPIN intermediate (AES-CCM 256-bit)",
@@ -932,8 +934,8 @@ class SPITkeyGUI(QWidget):
                 border: 2px solid #3498db;
                 border-radius: 8px;
                 margin-top: 10px;
-                padding-top: 20px;
-                padding-bottom: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
             }
             QGroupBox::title {
                 subcontrol-origin: margin;
@@ -1114,10 +1116,17 @@ class SPITkeyGUI(QWidget):
         decrypt_button.clicked.connect(self.start_decryption)
         main_layout.addWidget(decrypt_button)
 
-        main_layout.addWidget(QLabel("Output/Results:"))
+        # ---------------------------------------------------------------------
+        # 5. Text Output box
+        # ---------------------------------------------------------------------
+        results_group = QGroupBox("Output/Results")
+        results_layout = QVBoxLayout()
+
         self.output_text = AnimatedTextEdit()
         self.output_text.setReadOnly(True)
         self.output_text.setPlaceholderText("Decryption results will appear here.")
+        results_layout.addWidget(self.output_text)
+
         # Set up output redirection
         self.output_redirector = OutputRedirector(self.output_text)
         sys.stdout = self.output_redirector
@@ -1127,16 +1136,18 @@ class SPITkeyGUI(QWidget):
         self.original_stdout = sys.__stdout__
         self.original_stderr = sys.__stderr__
 
-        main_layout.addWidget(self.output_text)
+        results_group.setLayout(results_layout)
+        main_layout.addWidget(results_group)
+
         self.setLayout(main_layout)
 
         # ---------------------------------------------------------------------
-        # 5. Setup audio player (requires an audio file)
+        # 6. Setup audio player (requires an audio file)
         # Note: You'll need to provide your own audio file
         self.player = QMediaPlayer()
         self.audio_output = QAudioOutput()
         self.player.setAudioOutput(self.audio_output)
-        
+
         # To use this, place an audio file in the same directory
         # Uncomment and modify the path below:
         self.player.setSource(QUrl.fromLocalFile("zeroplex.mp3"))
@@ -1321,12 +1332,12 @@ class Star:
     def __init__(self, width, height):
         self.reset(width, height)
         self.z = random.uniform(0, width)
-    
+
     def reset(self, width, height):
         self.x = random.uniform(-width, width)
         self.y = random.uniform(-height, height)
         self.z = random.uniform(0, width)
-    
+
     def update(self, speed, width, height):
         self.z -= speed
         if self.z <= 0:
@@ -1337,10 +1348,10 @@ class AnimatedTextEdit(QTextEdit):
     def __init__(self):
         super().__init__()
         self.stars = [Star(800, 600) for _ in range(200)]
-        self.angle = 0
+#        self.angle = 0
         self.key_rotation_y = 0
         self.key_rotation_x = 0
-        
+
         # Make text edit transparent to show background
         self.setStyleSheet("""
             QTextEdit {
@@ -1349,53 +1360,56 @@ class AnimatedTextEdit(QTextEdit):
                 font-family: Courier;
                 font-size: 12pt;
                 border: none;
+                margin-top: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
             }
         """)
-        
+
         # Set viewport to transparent
         self.viewport().setAutoFillBackground(False)
-        
+
         # Timer for animation
         self.timer = QTimer()
         self.timer.timeout.connect(self.update_animation)
         self.timer.start(16)  # ~60 FPS
-    
+
     def update_animation(self):
-        self.angle += 0.02
+#        self.angle += 0.02
         self.key_rotation_y += 2
         self.key_rotation_x += 0.5
         self.viewport().update()  # Update the viewport to trigger repaint
-    
+
     def draw_starfield(self, painter, width, height):
         painter.setPen(Qt.PenStyle.NoPen)
-        
+
         for star in self.stars:
             star.update(5, width, height)
-            
+
             # Project 3D to 2D
             k = 128.0 / star.z
             px = star.x * k + width / 2
             py = star.y * k + height / 2
-            
+
             if 0 <= px < width and 0 <= py < height:
                 size = (1 - star.z / width) * 3
                 brightness = int((1 - star.z / width) * 255)
                 color = QColor(brightness, brightness, brightness)
                 painter.setBrush(QBrush(color))
                 painter.drawEllipse(QPointF(px, py), size, size)
-    
-    def draw_3d_key(self, painter, cx, cy, scale):
+
+    def draw_3d_key(self, painter, cx, cy):
         painter.save()
         painter.translate(cx, cy)
-        
+
         # Simple 3D rotation matrices
         angle_x = math.radians(self.key_rotation_x)
         angle_y = math.radians(self.key_rotation_y)
-        
+
         # Define key vertices (simplified key shape)
         vertices = [
             # Key head (circular part)
-            *[(math.cos(a) * 30, math.sin(a) * 30, 0) 
+            *[(math.cos(a) * 30, math.sin(a) * 30, 0)
               for a in [i * math.pi / 8 for i in range(16)]],
             # Key shaft
             (0, 30, 0), (0, 90, 0), (5, 90, 0), (5, 30, 0),
@@ -1403,34 +1417,34 @@ class AnimatedTextEdit(QTextEdit):
             (5, 70, 0), (15, 70, 0), (15, 75, 0), (5, 75, 0),
             (5, 80, 0), (15, 80, 0), (15, 85, 0), (5, 85, 0),
         ]
-        
+
         # Apply rotation
         rotated = []
         for x, y, z in vertices:
             # Rotate around Y axis
             x1 = x * math.cos(angle_y) - z * math.sin(angle_y)
             z1 = x * math.sin(angle_y) + z * math.cos(angle_y)
-            
+
             # Rotate around X axis
             y1 = y * math.cos(angle_x) - z1 * math.sin(angle_x)
             z2 = y * math.sin(angle_x) + z1 * math.cos(angle_x)
-            
+
             rotated.append((x1, y1, z2))
-        
+
         # Draw key with depth
         gradient_colors = [
             QColor(255, 215, 0, 255),  # Gold with no transparency
             QColor(255, 193, 37, 255),
             QColor(218, 165, 32, 255)
         ]
-        
+
         # Sort by depth for simple painter's algorithm
         avg_z = sum(z for x, y, z in rotated) / len(rotated)
         color_idx = int((avg_z + 50) / 100 * 2) % 3
-        
+
         painter.setPen(QPen(QColor(200, 150, 0, 128), 2))
         painter.setBrush(QBrush(gradient_colors[color_idx]))
-        
+
         # Draw key head circle
         path = QPainterPath()
         for i in range(16):
@@ -1441,7 +1455,7 @@ class AnimatedTextEdit(QTextEdit):
                 path.lineTo(x, y)
         path.closeSubpath()
         painter.drawPath(path)
-        
+
         # Draw key shaft
         shaft = rotated[16:20]
         path = QPainterPath()
@@ -1450,7 +1464,7 @@ class AnimatedTextEdit(QTextEdit):
             path.lineTo(x, y)
         path.closeSubpath()
         painter.drawPath(path)
-        
+
         # Draw teeth
         teeth1 = rotated[20:24]
         path = QPainterPath()
@@ -1459,7 +1473,7 @@ class AnimatedTextEdit(QTextEdit):
             path.lineTo(x, y)
         path.closeSubpath()
         painter.drawPath(path)
-        
+
         teeth2 = rotated[24:28]
         path = QPainterPath()
         path.moveTo(teeth2[0][0], teeth2[0][1])
@@ -1467,28 +1481,22 @@ class AnimatedTextEdit(QTextEdit):
             path.lineTo(x, y)
         path.closeSubpath()
         painter.drawPath(path)
-        
+
         painter.restore()
-    
+
     def paintEvent(self, event):
         # Create painter for the viewport
         painter = QPainter(self.viewport())
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
-        
         width = self.viewport().width()
         height = self.viewport().height()
-        
         # Fill background
         painter.fillRect(0, 0, width, height, QColor(0, 0, 0))
-        
         # Draw starfield
         self.draw_starfield(painter, width, height)
-        
         # Draw rotating 3D key in center
-        self.draw_3d_key(painter, width // 2, height // 2, 1.0)
-        
+        self.draw_3d_key(painter, width // 2, height // 2)
         painter.end()
-        
         # Call parent paintEvent to draw the text on top
         super().paintEvent(event)
 
