@@ -216,7 +216,7 @@ def save_recovery(logfile, VMK, path):
     REV_rec_enc = get_rev_key(logfile, "Recovery")
     REV_dec = decrypt(REV_rec_enc, VMK)
     rec_GUID = get_rec_GUID(logfile)
-    print("Recovery key GUID")
+    print("\nRecovery key GUID")
     print(rec_GUID)
     print("Decrypted reverse recovery key")
     REV_key = parse_key(REV_dec)
@@ -225,8 +225,9 @@ def save_recovery(logfile, VMK, path):
     # save the recovery key to a file $GUID.recovery
     filename = os.path.join(path, rec_GUID + ".recovery")
 
-    print(f"Writing the following to recovery key file: {filename}")
-    print(rec_key)
+    print(f"Recovery key: {rec_key}")
+    print(f"Saved to file: {filename}")
+
     while True:
         if os.path.isfile(filename):             # warn before overwriting file
             qm = QMessageBox()
@@ -619,7 +620,7 @@ def decrypt_orchestrator(args):
     """
 
 #    for arg in args:
-    print(args)
+#    print(args)
 
     logfile = get_logfile_content(args['logfile'])
     if logfile is None:
@@ -656,8 +657,6 @@ def decrypt_orchestrator(args):
             else:
                 print("Decrypting FVEK using VMK from TPM")
                 VMK = get_vmk(args['vmk'])
-
-            print("VMK      : " + VMK.hex())
 
             FVEK_enc = get_enc_fvek(logfile)
             print("Decrypting FVEK")
@@ -983,7 +982,7 @@ class SPITkeyGUI(QWidget):
         self.log_file_input = QLineEdit()
         self.log_file_input.setPlaceholderText("Path to log file (e.g., dislocker.log)")
         log_file_browse = QPushButton("Browse...")
-        log_file_browse.clicked.connect(lambda: self.browse_file(self.log_file_input, "Select Dislocker Log File", "(*.log);;All Files (*)"))
+        log_file_browse.clicked.connect(lambda: self.browse_file(self.log_file_input, "Select Dislocker Log File", "Dislocker log (*.log;*.txt);;All Files (*)"))
 
         h_layout = QHBoxLayout()
         h_layout.addWidget(self.log_file_input)
@@ -1091,7 +1090,7 @@ class SPITkeyGUI(QWidget):
         output_group = QGroupBox("Output Settings")
         output_layout = QVBoxLayout()
 
-        output_layout.addWidget(QLabel("Output File (where to save VMK/FVEK):"))
+        output_layout.addWidget(QLabel("Output Directory (where to save VMK/FVEK):"))
         self.output_dir_input = QLineEdit()
         self.output_dir_input.setPlaceholderText("Path to save decrypted keys (e.g., decrypted_keys.txt)")
         output_dir_browse = QPushButton("Browse...")
@@ -1399,7 +1398,7 @@ class AnimatedTextEdit(QTextEdit):
             *[(math.cos(a) * 30, math.sin(a) * 30, 0) 
               for a in [i * math.pi / 8 for i in range(16)]],
             # Key shaft
-            (0, 30, 0), (0, 80, 0), (5, 80, 0), (5, 30, 0),
+            (0, 30, 0), (0, 90, 0), (5, 90, 0), (5, 30, 0),
             # Key teeth
             (5, 70, 0), (15, 70, 0), (15, 75, 0), (5, 75, 0),
             (5, 80, 0), (15, 80, 0), (15, 85, 0), (5, 85, 0),
@@ -1420,9 +1419,9 @@ class AnimatedTextEdit(QTextEdit):
         
         # Draw key with depth
         gradient_colors = [
-            QColor(255, 215, 0, 128),  # Gold with transparency
-            QColor(255, 193, 37, 128),
-            QColor(218, 165, 32, 128)
+            QColor(255, 215, 0, 255),  # Gold with no transparency
+            QColor(255, 193, 37, 255),
+            QColor(218, 165, 32, 255)
         ]
         
         # Sort by depth for simple painter's algorithm
