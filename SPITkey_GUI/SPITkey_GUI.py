@@ -1392,6 +1392,7 @@ class AnimatedTextEdit(QTextEdit):
 #        self.angle = 0
         self.key_rotation_y = 0
         self.key_rotation_x = 0
+        self.key_rotation_z = 0
 
         # Make text edit transparent to show background
         self.setStyleSheet("""
@@ -1419,6 +1420,7 @@ class AnimatedTextEdit(QTextEdit):
 #        self.angle += 0.02
         self.key_rotation_y += 2
         self.key_rotation_x += 0.5
+        self.key_rotation_z += 0.7
         self.viewport().update()  # Update the viewport to trigger repaint
 
     def draw_starfield(self, painter, width, height):
@@ -1443,9 +1445,10 @@ class AnimatedTextEdit(QTextEdit):
         painter.save()
         painter.translate(cx, cy)
 
-        # Simple 3D rotation matrices
+        # Simple 3D rotation angles
         angle_x = math.radians(self.key_rotation_x)
         angle_y = math.radians(self.key_rotation_y)
+        angle_z = math.radians(self.key_rotation_z)
 
         # Define key vertices (simplified key shape)
         vertices = [
@@ -1462,13 +1465,19 @@ class AnimatedTextEdit(QTextEdit):
         # Apply rotation
         rotated = []
         for x, y, z in vertices:
-            # Rotate around Y axis
-            x1 = x * math.cos(angle_y) - z * math.sin(angle_y)
-            z1 = x * math.sin(angle_y) + z * math.cos(angle_y)
             # Rotate around X axis
-            y1 = y * math.cos(angle_x) - z1 * math.sin(angle_x)
-            z2 = y * math.sin(angle_x) + z1 * math.cos(angle_x)
-            rotated.append((x1, y1, z2))
+            y1 = y * math.cos(angle_x) - z * math.sin(angle_x)
+            z1 = y * math.sin(angle_x) + z * math.cos(angle_x)
+            
+            # Rotate around Y axis
+            x1 = x * math.cos(angle_y) - z1 * math.sin(angle_y)
+            z2 = x * math.sin(angle_y) + z1 * math.cos(angle_y)
+            
+            # Rotate around Z axis
+            x2 = x1 * math.cos(angle_z) - y1 * math.sin(angle_z)
+            y2 = x1 * math.sin(angle_z) + y1 * math.cos(angle_z)
+            
+            rotated.append((x2, y2, z2))
 
         painter.setPen(QPen(QColor(200, 150, 0, 128), 2))
         painter.setBrush(QBrush(QColor(255, 215, 0, 255))) # Gold with no transparency
