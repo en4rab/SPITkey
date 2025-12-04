@@ -15,11 +15,16 @@ from PyQt6.QtCore import QObject, pyqtSignal
 
 import traceback
 
+# needed for app icons and windows task bar icon
+import ctypes
+
 # needed for the starfield nonsense
 import random
 import math
+
+from PyQt6 import QtCore
 from PyQt6.QtCore import QTimer, Qt, QPointF
-from PyQt6.QtGui import QPainter, QColor, QPen, QFont, QBrush, QPainterPath
+from PyQt6.QtGui import QPainter, QColor, QPen, QFont, QBrush, QPainterPath, QIcon
 # for audio playback
 from PyQt6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PyQt6.QtCore import QUrl
@@ -954,6 +959,15 @@ class SPITkeyGUI(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("SPITkey BitLocker VMK Decryptor - unregistered")
+
+        # Add app icon
+        app_icon = QIcon()
+        app_icon.addFile('icons/16.png', QtCore.QSize(16,16))
+        app_icon.addFile('icons/32.png', QtCore.QSize(32,32))
+        app_icon.addFile('icons/48.png', QtCore.QSize(48,48))
+        app_icon.addFile('icons/256.png', QtCore.QSize(256,256))
+        app.setWindowIcon(app_icon)
+
         self.setGeometry(100, 100, 1200, 900)
         self.setStyleSheet(self.get_style_sheet())
         self.init_ui()
@@ -1393,6 +1407,8 @@ class AnimatedTextEdit(QTextEdit):
         self.key_rotation_y = 0
         self.key_rotation_x = 0
         self.key_rotation_z = 0
+        self.scroll_offset = 0
+        self.scroller_text = "All your keys are belong to us"
 
         # Make text edit transparent to show background
         self.setStyleSheet("""
@@ -1421,6 +1437,7 @@ class AnimatedTextEdit(QTextEdit):
         self.key_rotation_y += 2
         self.key_rotation_x += 0.5
         self.key_rotation_z += 0.7
+        self.scroll_offset += 2
         self.viewport().update()  # Update the viewport to trigger repaint
 
     def draw_starfield(self, painter, width, height):
@@ -1521,6 +1538,34 @@ class AnimatedTextEdit(QTextEdit):
 
         painter.restore()
 
+    def draw_rainbow_scroller(self, painter, width, height):
+        """Draw animated rainbow sine wave scroller"""
+        painter.save()
+        
+        # Position at bottom of screen
+        y_base = height - 30
+        # Font setup
+        font = QFont("Comic Sans MS", 30, QFont.Weight.Bold)
+        painter.setFont(font)
+        # Extend text for seamless scrolling
+        extended_text = self.scroller_text + "  ***  " + self.scroller_text + "  ***  "
+        char_spacing = 30
+        
+        for i, char in enumerate(extended_text):
+            # Calculate horizontal position with scrolling
+            x = (i * char_spacing - self.scroll_offset) % (len(extended_text) * char_spacing)
+            # Sine wave for vertical motion
+            sine_offset = math.sin(x * 0.02) * 20
+            y = y_base + sine_offset
+            # Rainbow color based on position
+            hue = ((x - self.scroll_offset) * 1) % 360
+            color = QColor.fromHsv(int(hue), 255, 255)
+            # Draw main character
+            painter.setPen(QPen(color))
+            painter.drawText(int(x), int(y), char)
+
+        painter.restore()
+
     def paintEvent(self, event):
         # Create painter for the viewport
         painter = QPainter(self.viewport())
@@ -1533,12 +1578,20 @@ class AnimatedTextEdit(QTextEdit):
         self.draw_starfield(painter, width, height)
         # Draw rotating 3D key in center
         self.draw_3d_key(painter, width // 2, height // 2)
+        # Draw rainbow scroller at bottom
+        self.draw_rainbow_scroller(painter, width, height)
         painter.end()
         # Call parent paintEvent to draw the text on top
         super().paintEvent(event)
 
 
 if __name__ == '__main__':
+    # Fix for Windows taskbar icon
+    # This tells Windows to treat this as a separate app, not a Python script
+    if sys.platform == 'win32':
+        myappid = 'en4rab.SPITkey.GUI.version1'  # arbitrary string
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+
     # Initialize the main PyQt application
     app = QApplication(sys.argv)
 
