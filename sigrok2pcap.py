@@ -160,47 +160,56 @@ def findKeys(output, filename):
 # This can then be searched or written out and converted with minimal effort  #
 # ----------------------------------------------------------------------------#
 def convert(Lines):
-    # check first line is valid action eg READ or WRITE
-    start_idx = 0
-    for x in range(4):
-        line = Lines[x].strip("\n")
-        action = getAction(line)
-        if action == "Read" or action == "Write":
-            start_idx = x
-            break
+    output_lines = []
+    prev_action = None
+    current_line = None
 
-    prev_action = ""
-    length = len(Lines)
-    for x in range(start_idx, length, 3):
-        left = length - x               # stop if input file has been truncated
-        if left < 3:
-            break
-        line1 = Lines[x].strip("\n")
-        line2 = Lines[x+1].strip("\n")
-        line3 = Lines[x+2].strip("\n")
+    # State per transaction
+    action = None
+    register = None
 
-        if line1 == "":           # dont explode if there are trailing newlines
-            break
+    for raw in Lines:
+        line = raw.strip("\n")
+        if not line:
+            continue
 
-        action = getAction(line1)
-        register = getRegister(line2)
-        data = getData(line3)
+        # Determine which field this line contains
+        if " SPI TPM: TPM transactions: " not in line:
+            continue
 
-        if register == "TPM_DATA_FIFO_0":
-            if prev_action == "":    # stops first line of the file being blank
-                output = action + " " + register + " " + data + " "
+        parts = line.split(" SPI TPM: TPM transactions: ", 1)
+        value = parts[1]
+
+        if value in ("Read", "Write"):
+            action = value
+            register = None  # reset for new transaction
+        elif value.startswith("Register: "):
+            register = value[len("Register: "):]
+        elif value == "Wait":
+            continue  # skip wait lines entirely
+        else:
+            # This is a data byte - only process if we have context
+            if action is None or register is None:
+                continue
+            if register != "TPM_DATA_FIFO_0":
+                continue
+
+            data = value[:2]  # guard against trailing nulls as before
+
+            if prev_action is None:
+                current_line = action + " " + register + " " + data + " "
                 prev_action = action
             elif action == prev_action:
-                output = output + data + " "
+                current_line = current_line + data + " "
             else:
-                output = (
-                    output + "\n" + action
-                    + " " + register + " " + data + " "
-                    )
+                output_lines.append(current_line)
+                current_line = action + " " + register + " " + data + " "
                 prev_action = action
-        else:
-            continue
-    return output
+
+    if current_line:
+        output_lines.append(current_line)
+
+    return "\n".join(output_lines)
 
 
 # ########################################################################### #
