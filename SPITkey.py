@@ -263,9 +263,12 @@ def get_enc_fvek(logfile):
     for x in range(0, length):
         line = logfile[x].strip("\n")
         if "Datum entry type: 3" in line:
-            enc_key = get_enc_payload(logfile, x)
-            break
-    return enc_key
+            # look ahead a bit to confirm it's the right one
+            check_for_fvek_encry = "".join(logfile[x:x + 5])
+            if "ENTRY TYPE FVEK" in check_for_fvek_encry:
+                enc_key = get_enc_payload(logfile, x)
+                return enc_key
+    raise ValueError("No valid FVEK entry found in log")
 
 
 # --------------------------------------------------------------------------- #
