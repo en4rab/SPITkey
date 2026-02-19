@@ -367,11 +367,20 @@ def xor_keys(key1, key2):
 #  AES-CCM decrypt the data src https://github.com/libyal/libbde/issues/36	  #
 # --------------------------------------------------------------------------- #
 def decrypt(data, key):
-    nonce = data[:12]
-    tag = data[12:28]
-    ciphertext = data[28:]
-    aes = AES.new(key, AES.MODE_CCM, nonce=nonce, mac_len=16)
-    data_dec = aes.decrypt_and_verify(ciphertext, tag)
+    try:
+        nonce = data[:12]
+        tag = data[12:28]
+        ciphertext = data[28:]
+        aes = AES.new(key, AES.MODE_CCM, nonce=nonce, mac_len=16)
+        data_dec = aes.decrypt_and_verify(ciphertext, tag)
+    except ValueError as mac_ver_error:
+        if str(mac_ver_error) == "MAC check failed":
+            print("MAC check failed. Are you sure you have the correct VMK?")
+            sys.exit()
+        else:
+            print("Decryption failed")
+            sys.exit()
+
     if args.verbose is True:
         print("Key:       " + key.hex())
         print("nonce:     " + nonce.hex())
