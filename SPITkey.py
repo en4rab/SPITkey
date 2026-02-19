@@ -47,30 +47,39 @@ from hashlib import sha256
 # --------------------------------------------------------------------------- #
 def get_enc_payload(logfile, offset):
     x = offset
-    for y in range(1, 18):
+    nonce = mac = payload = None
+    for y in range(1, 50):  # extend range; some dislocker builds have longer spacing
+        if x + y >= len(logfile):
+            break
         line = logfile[x + y].strip("\n")
+
         if "Nonce:" in line:
-            nonce = logfile[x + y + 1].strip("\n")
-            nonce = nonce.split("[DEBUG] ")
-            nonce = bytes.fromhex(nonce[1])
+            next_line = logfile[x + y + 1].strip("\n")
+            nonce = bytes.fromhex(next_line.split("[DEBUG] ")[1])
         elif "MAC:" in line:
-            mac = logfile[x + y + 1].strip("\n")
-            mac = mac.split("[DEBUG] ")
-            mac = bytes.fromhex(mac[1])
+            next_line = logfile[x + y + 1].strip("\n")
+            mac = bytes.fromhex(next_line.split("[DEBUG] ")[1])
         elif "Payload:" in line:
             payload = ""
-            for z in range(1, 10):
+            for z in range(1, 20):
+                if x + y + z >= len(logfile):
+                    break
                 temp = logfile[x + y + z].strip("\n")
-                temp = temp.split("[DEBUG] ")
-                temp = temp[1]
-                if temp[:2] == "0x":    # dislocker puts a - after the 8th byte
+                if "[DEBUG]" not in temp:
+                    continue
+                temp = temp.split("[DEBUG] ")[1]
+                if temp.startswith("0x"):
                     temp = temp[11:].replace("-", " ")
-                    payload = payload + temp
+                    payload += temp
                 else:
                     break
             payload = bytes.fromhex(payload)
-        elif "Header safe" in line:      # at the end of the datum stop looking
+        elif "Header safe" in line and nonce and mac and payload:
+            # if we have everything we need
             break
+
+    if not (nonce and mac and payload):
+        raise ValueError(f"Failed to find Nonce/MAC/Payload near line {x}")
 
     if args.verbose is True:
         print("Found encrypted entry")
