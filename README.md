@@ -122,7 +122,8 @@ Install Pulseview
 [https://sigrok.org/wiki/Downloads](https://sigrok.org/wiki/Downloads)
 
 Install the libsigrokdecoder_spi-tpm stacked decoder.
-[https://github.com/ghecko/libsigrokdecoder_spi-tpm](https://github.com/ghecko/libsigrokdecoder_spi-tpm)
+[https://github.com/ghecko/libsigrokdecoder_spi-tpm](https://github.com/ghecko/libsigrokdecoder_spi-tpm)  
+I have made an edited version of this that finds both the TPMandPIN blob and the VMK and have made it [available here](https://github.com/en4rab/libsigrokdecoder_spi-tpm) and created a pull request to try to get it added to ghecko's original
 
 To install this click on code then download zip to download the plugin.
 Unzip the libsigrokdecoder_spi-tpm-main.zip and it should unzip to a folder 
