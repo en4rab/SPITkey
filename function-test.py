@@ -37,7 +37,10 @@ log = os.path.join("testdata", "logic2-TPMandKEY", "dislocker-TPMandKEY.log")
 key = os.path.join("testdata", "logic2-TPMandKEY", "TPMandKEY.vmk")
 bek = os.path.join("testdata", "logic2-TPMandKEY", "E5EFFF28-7AA3-4000-9E70-BB1A3DAD6203.BEK")
 
-os.system("python SPITkey.py -l " + log + " -k " + key + " -b " + bek)
+print("\n\nTesting logic2-TPMandKEY\n")
+command = "python SPITkey.py -l " + log + " -k " + key + " -b " + bek
+print(f"Command: {command}")
+os.system(command)
 
 recovery_key = "712349-506968-088748-356565-266090-003839-598565-010538"
 fvek = "0480c9fa9f7c8457890542b80d80b26abac96503f05d84ddca4fa8af2d9fe993dfd30000000000000000000000000000000000000000000000000000000000000000"
@@ -68,7 +71,10 @@ cleanup(recovery_file)
 
 log = os.path.join("testdata", "logic2-TPM", "dislocker-TPM.log")
 key = os.path.join("testdata", "logic2-TPM", "TPM-only.vmk")
-os.system("python SPITkey.py -l " + log + " -k " + key)
+print("\n\nTesting logic2-TPM\n")
+command = "python SPITkey.py -l " + log + " -k " + key
+print(f"Command: {command}")
+os.system(command)
 
 recovery_key = "712349-506968-088748-356565-266090-003839-598565-010538"
 fvek = "0480c9fa9f7c8457890542b80d80b26abac96503f05d84ddca4fa8af2d9fe993dfd30000000000000000000000000000000000000000000000000000000000000000"
@@ -99,7 +105,10 @@ cleanup(recovery_file)
 
 log = os.path.join("testdata", "logic2-TPMandPIN", "dislocker-TPMandPIN.log")
 blob = os.path.join("testdata", "logic2-TPMandPIN", "TPMandPIN.blob")
-os.system("python SPITkey.py -l " + log + " -t " + blob + " -p 87654321")
+print("\n\nTesting logic2-TPMandPIN\n")
+command = "python SPITkey.py -l " + log + " -t " + blob + " -p 87654321"
+print(f"Command: {command}")
+os.system(command)
 
 recovery_key = "712349-506968-088748-356565-266090-003839-598565-010538"
 fvek = "0480c9fa9f7c8457890542b80d80b26abac96503f05d84ddca4fa8af2d9fe993dfd30000000000000000000000000000000000000000000000000000000000000000"
@@ -131,7 +140,10 @@ cleanup(recovery_file)
 log = os.path.join("testdata", "logic2-TPMandPINandKEY", "dislocker-TPMandPINandKEY.log")
 blob = os.path.join("testdata", "logic2-TPMandPINandKEY", "TPMandPINandKEY.blob")
 bek = os.path.join("testdata", "logic2-TPMandPINandKEY", "CA933F67-F8AA-4FB7-B526-F0D4EE6AB0AB.BEK")
-os.system("python SPITkey.py -l " + log + " -t " + blob + " -p 87654321 -b " + bek)
+print("\n\nTesting logic2-TPMandPINandKEY\n")
+command = "python SPITkey.py -l " + log + " -t " + blob + " -p 87654321 -b " + bek
+print(f"Command: {command}")
+os.system(command)
 
 recovery_key = "203907-116314-114389-096954-364463-544236-500236-393580"
 fvek = "0480c9fa9f7c8457890542b80d80b26abac96503f05d84ddca4fa8af2d9fe993dfd30000000000000000000000000000000000000000000000000000000000000000"
@@ -162,7 +174,10 @@ cleanup(recovery_file)
 
 log = os.path.join("testdata", "swtpm-TPM", "dislocker-TPM.log")
 vmk = os.path.join("testdata", "swtpm-TPM", "TPM-only.vmk")
-os.system("python SPITkey.py -l " + log + " -k " + vmk)
+print("\n\nTesting swtpm-TPM\n")
+command = "python SPITkey.py -l " + log + " -k " + vmk
+print(f"Command: {command}")
+os.system(command)
 
 recovery_key = "586784-333322-635690-264165-396374-216447-422653-402589"
 fvek = "04801c8b7b0a3dd295948742aaf6c61920e25d7cbd7eb97471e54b2fd0819d0a2d010000000000000000000000000000000000000000000000000000000000000000"
@@ -194,7 +209,10 @@ cleanup(recovery_file)
 
 log = os.path.join("testdata", "swtpm-TPMandPIN", "dislocker-TPMandPIN.log")
 blob = os.path.join("testdata", "swtpm-TPMandPIN", "TPMandPIN.blob")
-os.system("python SPITkey.py -l " + log + " -t " + blob + " -p 87654321")
+print("\n\nTesting swtpm-TPMandPIN\n")
+command = "python SPITkey.py -l " + log + " -t " + blob + " -p 87654321"
+print(f"Command: {command}")
+os.system(command)
 
 recovery_key = "586784-333322-635690-264165-396374-216447-422653-402589"
 fvek = "04801c8b7b0a3dd295948742aaf6c61920e25d7cbd7eb97471e54b2fd0819d0a2d010000000000000000000000000000000000000000000000000000000000000000"
@@ -226,7 +244,10 @@ cleanup(recovery_file)
 
 log = os.path.join("testdata", "USB-KEY", "dislocker-key.log")
 bek = os.path.join("testdata", "USB-KEY", "108D1C23-D614-4DA1-910D-3D87C488833A.BEK")
-os.system("python SPITkey.py -l " + log + " -b " + bek)
+print("\n\nTesting USB-KEY\n")
+command = "python SPITkey.py -l " + log + " -b " + bek
+print(f"Command: {command}")
+os.system(command)
 
 recovery_key = "203907-116314-114389-096954-364463-544236-500236-393580"
 fvek = "0480c9fa9f7c8457890542b80d80b26abac96503f05d84ddca4fa8af2d9fe993dfd30000000000000000000000000000000000000000000000000000000000000000"
@@ -255,7 +276,10 @@ cleanup(fvek_file)
 
 log = os.path.join("testdata", "logic2-TPM", "dislocker-TPM.log")
 recovery_key = os.path.join("testdata", "logic2-TPM", "BitLocker_Recovery_Key_38F91648-280E-4F3A-9772-640DCB48F4CE.TXT")
-os.system("python SPITkey.py -l " + log + " -r " + recovery_key)
+print("\n\nTesting RECOVERY\n")
+command = "python SPITkey.py -l " + log + " -r " + recovery_key
+print(f"Command: {command}")
+os.system(command)
 
 fvek = "0480c9fa9f7c8457890542b80d80b26abac96503f05d84ddca4fa8af2d9fe993dfd30000000000000000000000000000000000000000000000000000000000000000"
 
@@ -279,7 +303,10 @@ cleanup(recovery_file)
 
 log = os.path.join("testdata", "password", "dislocker-password.log")
 password = "password"
-os.system("python SPITkey.py -l " + log + " -p " + password)
+print("\n\nTesting PASSWORD\n")
+command = "python SPITkey.py -l " + log + " -p " + password
+print(f"Command: {command}")
+os.system(command)
 
 recovery_key = "007942-637131-674355-218163-546744-283822-132561-640816"
 fvek = "0280a8e351093c96c478e6d343ced27d6f95000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
