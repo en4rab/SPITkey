@@ -376,6 +376,7 @@ def decrypt(data, key):
     except ValueError as mac_ver_error:
         if str(mac_ver_error) == "MAC check failed":
             print("MAC check failed. Are you sure you have the correct VMK?")
+            print("This can be caused by a noisy trace resulting in a corrupt key")
             sys.exit()
         else:
             print("Decryption failed")
